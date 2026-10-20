@@ -45,7 +45,9 @@ img,svg{max-width:100%}
 .col-main{flex:1 1 480px}.col-side{flex:1 1 380px;max-width:520px}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 @media (max-width:860px){.grid3{grid-template-columns:1fr}}
-nav a{color:#fff;text-decoration:none}
+nav a{color:#fff;text-decoration:none;transition:color .15s ease}
+nav .links a:not(.cta):hover{color:var(--sun)}
+nav .wordmark:hover{color:var(--sun)}
 .nav{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:26px}
 .nav .links{display:flex;gap:28px;align-items:center;flex-wrap:wrap;font-size:16px;font-weight:500}
 .nav .cta{background:var(--sun);color:var(--ink);padding:11px 18px;border-radius:0;font-weight:700}
@@ -176,7 +178,7 @@ nav a{color:#fff;text-decoration:none}
       <a href="#top" class="wordmark"><img src="img/mark.webp" alt="">Bookahead</a>
       <div class="links">
         <a href="#scout-sec">Sales Scout</a>
-        <a href="#sprint">The Sprint</a>
+        <a href="#sprint">14-Day Promise</a>
         <a href="#questions">Questions</a>
         <a href="#destinations">Destinations</a>
         <a href="#about">About</a>
@@ -372,7 +374,7 @@ nav a{color:#fff;text-decoration:none}
           <div class="ba-row"><b>Change a price</b><span>Find the login. Or email your web person and wait a week.</span></div>
           <div class="ba-row"><b>Add a weekend package</b><span>Copy an old page, break the layout, give up.</span></div>
           <div class="ba-row"><b>Post on social</b><span>Stare at the phone. Post the same photo as last year.</span></div>
-          <div class="ba-row"><b>Sell a bigger booking</b><span>Hope guests find the add-ons in a dropdown.</span></div>
+          <div class="ba-row"><b>Sell a bigger booking</b><span>Guests book the cheapest option and never see the extras.</span></div>
           <div class="ba-tot"><span>Time per week</span><span>A day, if you get to it</span></div>
         </div>
         <div class="ba-card then">
@@ -380,7 +382,7 @@ nav a{color:#fff;text-decoration:none}
           <div class="ba-row"><b>Change a price</b><span>Type <q>Raise the canoe rental to $65.</q> Live in a minute.</span></div>
           <div class="ba-row"><b>Add a weekend package</b><span>Type <q>Add a Canada Day cabin-and-canoe package at $890.</q> Scout builds the page and links it to your booking calendar.</span></div>
           <div class="ba-row"><b>Post on social</b><span>Drop in a photo from your phone. Scout writes the caption and schedules it.</span></div>
-          <div class="ba-row"><b>Sell a bigger booking</b><span>The package is the default offer. The single is the add-on.</span></div>
+          <div class="ba-row"><b>Sell a bigger booking</b><span>Guests see your best package first, so most of them book that.</span></div>
           <div class="ba-tot"><span>Time per week</span><span class="hl" style="padding:0 8px">About fifteen minutes</span></div>
         </div>
       </div>
