@@ -66,10 +66,15 @@ nav a{color:#fff;text-decoration:none}
 .chat button{font-family:inherit;font-size:15px;padding:10px 16px;min-height:44px;border-radius:4px;cursor:pointer}
 @media (max-width:860px){.badges{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:520px){.badges{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.part{background:#fff;border-radius:0;padding:28px 26px;display:flex;flex-direction:column;gap:14px;min-width:0;border-top:8px solid var(--brand)}
-.part h3{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
-.part p{font-size:17px;line-height:1.55;color:var(--ink-2)}
-.part .fig{margin-top:auto;padding-top:10px}
+.parts{display:flex;flex-direction:column}
+.part{display:flex;flex-wrap:wrap;gap:32px 64px;align-items:center;padding:48px 0;border-top:1px solid var(--line-2)}
+.part:last-child{border-bottom:1px solid var(--line-2)}
+.part-text{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.part-fig{flex:1 1 300px;max-width:420px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.part:nth-child(even) .part-fig{order:-1}
+@media (max-width:860px){.part{padding:36px 0}.part:nth-child(even) .part-fig{order:0}.part-fig{max-width:100%}}
+.part h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.part p{font-size:18px;line-height:1.55;color:var(--ink-2)}
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
 @media (max-width:980px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
@@ -79,11 +84,14 @@ nav a{color:#fff;text-decoration:none}
 .steps .s{font-size:16px;line-height:1.5;color:var(--ink-3)}
 .panel{background:var(--brand);color:#fff;border-radius:0;padding:36px 40px;display:flex;gap:32px;align-items:center;flex-wrap:wrap;justify-content:space-between}
 @media (max-width:600px){.panel{padding:28px 24px}}
-.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 56px}
-@media (max-width:860px){.faq{grid-template-columns:1fr}}
-.faq>div{display:flex;flex-direction:column;gap:8px;min-width:0;border-top:1px solid var(--line-2);padding-top:20px}
-.faq .q{font-size:20px;font-weight:700;line-height:1.3}
-.faq p{font-size:17px;line-height:1.55;color:var(--ink-2)}
+.faq{display:flex;flex-direction:column;max-width:760px;border-top:1px solid var(--line-2)}
+.faq details{border-bottom:1px solid var(--line-2)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-size:20px;font-weight:700;line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:0 0 auto;width:28px;height:28px;display:grid;place-items:center;font-size:22px;font-weight:600;color:var(--brand);transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.faq p{font-size:17px;line-height:1.55;color:var(--ink-2);padding:0 44px 22px 0}
 .browser{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .browser .top{display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--tint-2)}
 .browser .top i{width:9px;height:9px;border-radius:0;background:var(--line-2);display:inline-block}
@@ -99,32 +107,43 @@ nav a{color:#fff;text-decoration:none}
 
 @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
 
-/* Comparison sheet */
-.cmp{background:#fff;border:1px solid var(--line);border-radius:0;overflow:hidden}
-.cmp-head,.cmp-row{display:grid;grid-template-columns:180px 1fr 1.3fr;gap:0}
-.cmp-head{background:var(--tint-2);border-bottom:2px solid var(--ink);font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.cmp-head>div{padding:12px 20px}
-.cmp-head .now{color:var(--mute)}.cmp-head .then{color:var(--brand);border-left:1px solid var(--line)}
-.cmp-row{border-bottom:1px solid var(--line)}
-.cmp-row:last-child{border-bottom:0}
-.cmp-row>div{padding:18px 20px;font-size:17px;line-height:1.5;min-width:0}
-.cmp-row .job{font-weight:800;color:var(--ink)}
-.cmp-row .now{color:#7A7596;font-style:italic}
-.cmp-row .then{color:var(--ink-2);border-left:1px solid var(--line);background:var(--tint)}
-.cmp-row .then q{font-style:normal;font-weight:700;color:var(--brand);quotes:"\201C" "\201D"}
-.cmp-row.tot{background:var(--tint-2);border-top:2px solid var(--ink)}
-.cmp-row.tot>div{font-weight:800}
-.cmp-row.tot .now{font-style:normal}
-@media (max-width:760px){.cmp-head{display:none}.cmp-row{grid-template-columns:1fr}.cmp-row>div{padding:12px 18px}.cmp-row .job{padding-bottom:4px}.cmp-row .now::before{content:"Today: ";font-style:normal;font-weight:800;color:var(--mute)}.cmp-row .then{border-left:0}.cmp-row .then::before{content:"With your Scout: ";font-weight:800;color:var(--brand)}}
 /* Scheduled posts */
-.posts{display:flex;flex-direction:column;gap:12px}
-.post{margin:0;position:relative;border-radius:6px;overflow:hidden;aspect-ratio:16/9;background:var(--ink)}
+.posts{display:flex;flex-direction:column;gap:12px;width:100%}
+.post{margin:0;width:100%;position:relative;border-radius:6px;overflow:hidden;aspect-ratio:16/9;background:var(--ink)}
 .post img{width:100%;height:100%;object-fit:cover;display:block}
 .post figcaption{position:absolute;inset:auto 0 0 0;padding:28px 14px 12px;color:#fff;font-size:14px;line-height:1.35;font-weight:600;background:linear-gradient(180deg,rgba(23,19,58,0) 0%,rgba(23,19,58,.78) 100%);text-shadow:0 1px 2px rgba(0,0,0,.4)}
 .post .when{display:block;width:fit-content;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:var(--sun);color:var(--ink);padding:3px 8px;border-radius:2px;margin-bottom:6px;text-shadow:none}
 .post+.post{margin-top:-4px}
 .post:nth-child(2){transform:rotate(-1.2deg)}.post:nth-child(3){transform:rotate(1deg)}
 
+/* Letter */
+.letter{flex:1 1 480px;min-width:0;background:#fff;padding:44px 48px;display:flex;flex-direction:column;gap:22px;box-shadow:0 1px 2px rgba(23,19,58,.06)}
+@media (max-width:600px){.letter{padding:28px 22px}}
+.letter-body{display:flex;flex-direction:column;gap:16px;font-size:18px;line-height:1.65;color:var(--ink-2);max-width:62ch}
+.ul{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:6px;text-underline-offset:4px}
+.sig{display:flex;align-items:center;gap:14px;padding-top:8px}
+.sig img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:0 0 52px}
+.sig b{display:block;font-size:17px;font-weight:800}
+.sig span{display:block;font-size:14px;color:var(--mute)}
+/* Before / after */
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media (max-width:860px){.ba{grid-template-columns:1fr}}
+.ba-card{background:#fff;border:1px solid var(--line);padding:28px 30px;display:flex;flex-direction:column;min-width:0}
+.ba-card.then{background:var(--tint);border-color:var(--brand);border-top:8px solid var(--brand)}
+.ba-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.ba-head span{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.ba-card.now .ba-head span{color:#5A5582}.ba-card.then .ba-head span{color:var(--brand)}.ba-card.then .ba-head{border-bottom-color:var(--brand)}
+.ba-head small{font-size:14px;color:var(--mute)}
+.ba-row{padding:16px 0;border-bottom:1px dashed var(--line-2)}
+.ba-row b{display:block;font-size:17px;font-weight:700}
+.ba-row span{display:block;font-size:16px;line-height:1.5;margin-top:2px}
+.ba-card.now .ba-row span{color:#7A7596;font-style:italic}
+.ba-card.then .ba-row span{color:var(--ink-2)}
+.ba-row q{font-style:normal;font-weight:700;color:var(--brand);quotes:"\201C" "\201D"}
+.ba-tot{margin-top:auto;padding-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;font-weight:800;font-size:18px}
+.ba-card.now .ba-tot span:last-child{color:#7A7596}
+/* Mobile nav */
+@media (max-width:760px){.nav{padding-top:18px;gap:12px;flex-wrap:nowrap}.nav .links a:not(.cta){display:none}.nav .links{gap:0}.nav .cta{padding:10px 14px;font-size:15px}.hero{padding:44px 0 64px;gap:36px}.sec{padding-block:56px}body{font-size:17px}.hero .sub{font-size:17px}.body,.letter-body,.part p{font-size:17px}}
 .setup{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);background:#fff}
 @media (max-width:980px){.setup{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.setup{grid-template-columns:1fr}}
@@ -240,17 +259,25 @@ nav a{color:#fff;text-decoration:none}
 <!-- Meet your Sales Scout -->
 <div id="scout-sec" class="band-tint">
   <div class="wrap sec" style="display:flex;flex-direction:column;gap:56px">
-    <div class="row" style="gap:48px">
-      <div style="flex:1 1 380px;max-width:560px;display:flex;justify-content:center">
-        <img src="img/scout-hero.webp" alt="The Sales Scout looking out over a lake with binoculars" style="width:100%;height:auto">
-      </div>
-      <div class="col-main" style="display:flex;flex-direction:column;gap:22px">
-        <div class="eyebrow">Meet your Sales Scout</div>
-        <h2 class="h2">You don't need more software. You need a system that does the work.</h2>
-        <div class="body" style="display:flex;flex-direction:column;gap:16px">
-          <p>Sales Scout is an AI assistant built on top of Claude, installed on your computer with your business built around it. On its own, Claude is a clever stranger. It doesn't know your business. With the setup, it's an assistant that knows your products, prices, brand and rules.</p>
+    <div class="row" style="gap:48px;align-items:flex-start">
+      <div class="letter">
+        <div class="eyebrow">A note from Matthew</div>
+        <h2 class="h2">You don't need more software. You need a <u class="ul">system</u> that does the work.</h2>
+        <div class="letter-body">
+          <p>Here's the problem. Every tourism operator I know has a website they're a little embarrassed by, a list of packages that hasn't changed since 2019, and a social feed that goes quiet the moment the season gets busy. Not because they don't care. Because July is July.</p>
+          <p>The software industry's answer has been more software. Another login, another monthly fee, another dashboard nobody opens after March.</p>
+          <p>I don't think you need more software. I think you need a system that does the work: one that knows your business, makes the change when you ask, and then gets out of the way.</p>
+          <p>That's what Sales Scout is. It's an AI assistant built on top of Claude, installed on your computer with your business built around it: your site, your products, your prices, your brand, your rules. On its own, Claude is a clever stranger. It doesn't know your business. With the setup, it does.</p>
           <p>You tell it what you want in plain English. It makes the change, shows you, and publishes only when you say yes.</p>
+          <p>I built it because I needed it. Two of us run Parkbus coast to coast, and this is how. Now I'm setting it up for other operators, and I'd like to set it up for you.</p>
         </div>
+        <div class="sig">
+          <img src="img/matthew.webp" alt="Matthew Thomas">
+          <div><b>Matthew Thomas</b><span>Founder, Parkbus and Bookahead</span></div>
+        </div>
+      </div>
+      <div style="flex:1 1 300px;max-width:440px;display:flex;justify-content:center;align-self:center">
+        <img src="img/scout-hero.webp" alt="The Sales Scout looking out over a lake with binoculars" style="width:100%;height:auto">
       </div>
     </div>
 
@@ -282,19 +309,23 @@ nav a{color:#fff;text-decoration:none}
       </div>
     </div>
 
-    <div class="grid3">
+    <div class="parts">
       <div class="part">
-        <div class="eyebrow">Part one</div>
-        <h3>Your Sales Scout, set up</h3>
-        <p>Claude on your computer, with your site, your products, your brand guide, your templates and your house rules built around it. Seasonal hours, a new weekend activity, a price change: say it in plain English and it's live in a minute, on-brand.</p>
-        <div class="fig" style="display:flex;justify-content:center"><img src="img/scout-tablet.webp" alt="The Sales Scout working on a tablet" style="width:min(100%,200px);height:auto"></div>
+        <div class="part-text">
+          <div class="eyebrow">Part one</div>
+          <h3>Your Sales Scout, set up</h3>
+          <p>Claude on your computer, with your site, your products, your brand guide, your templates and your house rules built around it. Seasonal hours, a new weekend activity, a price change: say it in plain English and it's live in a minute, on-brand.</p>
+        </div>
+        <div class="part-fig"><img src="img/scout-tablet.webp" alt="The Sales Scout working on a tablet" style="width:min(100%,260px);height:auto"></div>
       </div>
       <div class="part">
-        <div class="eyebrow">Part two</div>
-        <h3>The Summer Revenue Upgrade</h3>
-        <p>We go through every tour, package, room and experience you'll run next summer and rebuild how it's sold. Low-margin singles get bundled into high-ticket experiences, friction comes out, and the bigger booking becomes the default.</p>
-        <div class="fig chart">
-          <svg viewBox="0 0 300 150" role="img" aria-label="Example: a $45 rental repackaged as a $189 Day on the Lake">
+        <div class="part-text">
+          <div class="eyebrow">Part two</div>
+          <h3>The Summer Revenue Upgrade</h3>
+          <p>We go through every tour, package, room and experience you'll run next summer and rebuild how it's sold. Low-margin singles get bundled into high-ticket experiences, friction comes out, and the bigger booking becomes the default.</p>
+        </div>
+        <div class="part-fig chart">
+          <svg viewBox="0 0 300 150" role="img" aria-label="Example: a $45 rental repackaged as a $189 Day on the Lake" style="width:100%;max-width:340px">
             <line x1="20" y1="120" x2="280" y2="120" stroke="#D6D1EE" stroke-width="1.5"/>
             <rect x="50" y="98" width="70" height="22" rx="5" fill="#CFC8F5"/>
             <rect x="180" y="30" width="70" height="90" rx="5" fill="#FFD36B"/>
@@ -309,35 +340,46 @@ nav a{color:#fff;text-decoration:none}
         </div>
       </div>
       <div class="part">
-        <div class="eyebrow">Part three</div>
-        <h3>The Full-Season Content Engine</h3>
-        <p>A whole summer of social media, done before the season starts. Custom templates in your colours and voice, plus a posting calendar. Drop in a photo from your phone and your Scout writes the post.</p>
-        <div class="fig posts">
+        <div class="part-text">
+          <div class="eyebrow">Part three</div>
+          <h3>The Full-Season Content Engine</h3>
+          <p>A whole summer of social media, done before the season starts. Custom templates in your colours and voice, plus a posting calendar. Drop in a photo from your phone and your Scout writes the post.</p>
+          <div class="cap">Three of the summer's posts, written and scheduled in May from your own photos.</div>
+        </div>
+        <div class="part-fig posts">
           <figure class="post"><img src="img/post-1.webp" alt=""><figcaption><span class="when">Sat Jul 4 &middot; 7:30 am</span>The lake at 7am, before anyone else is up. Canoes go out at 9.</figcaption></figure>
           <figure class="post"><img src="img/post-2.webp" alt=""><figcaption><span class="when">Thu Jul 30 &middot; 6:00 pm</span>Three cabins left for the long weekend. That's it until September.</figcaption></figure>
           <figure class="post"><img src="img/post-3.webp" alt=""><figcaption><span class="when">Sun Aug 16 &middot; 5:00 pm</span>Best seat in the park. Day-on-the-Lake packages still open this week.</figcaption></figure>
-          <div class="cap">Three of the summer's posts, written and scheduled in May from your own photos.</div>
         </div>
       </div>
     </div>
 
     <!-- Before / after -->
-    <div style="display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;flex-direction:column;gap:24px">
       <h3 style="font-size:28px;font-weight:800;letter-spacing:-.02em">How things get done, before and after Sales Scout</h3>
-      <p class="body" style="max-width:680px">Same business, same four jobs. The left column is how most operators do them today. The right column is what you do once your Scout is installed.</p>
-      <div class="cmp">
-        <div class="cmp-head"><div></div><div class="now">Today</div><div class="then">With your Scout</div></div>
-        <div class="cmp-row"><div class="job">Change a price</div><div class="now">Find the login. Or email your web person and wait a week.</div><div class="then">Type <q>Raise the canoe rental to $65.</q> Live in a minute.</div></div>
-        <div class="cmp-row"><div class="job">Add a weekend package</div><div class="now">Copy an old page, break the layout, give up.</div><div class="then">Type <q>Add a Canada Day cabin-and-canoe package at $890.</q> Scout builds the page and links it to your booking calendar.</div></div>
-        <div class="cmp-row"><div class="job">Post on social</div><div class="now">Stare at the phone. Post the same photo as last year.</div><div class="then">Drop in a photo from your phone. Scout writes the caption and schedules it.</div></div>
-        <div class="cmp-row"><div class="job">Sell a bigger booking</div><div class="now">Hope guests find the add-ons in a dropdown.</div><div class="then">The package is the default offer. The single is the add-on.</div></div>
-        <div class="cmp-row tot"><div class="job">Time per week</div><div class="now">A day, if you get to it</div><div class="then"><span class="hl" style="padding:0 8px">About fifteen minutes</span></div></div>
+      <div class="ba">
+        <div class="ba-card now">
+          <div class="ba-head"><span>Before</span><small>How most operators do it today</small></div>
+          <div class="ba-row"><b>Change a price</b><span>Find the login. Or email your web person and wait a week.</span></div>
+          <div class="ba-row"><b>Add a weekend package</b><span>Copy an old page, break the layout, give up.</span></div>
+          <div class="ba-row"><b>Post on social</b><span>Stare at the phone. Post the same photo as last year.</span></div>
+          <div class="ba-row"><b>Sell a bigger booking</b><span>Hope guests find the add-ons in a dropdown.</span></div>
+          <div class="ba-tot"><span>Time per week</span><span>A day, if you get to it</span></div>
+        </div>
+        <div class="ba-card then">
+          <div class="ba-head"><span>After</span><small>Once your Scout is installed</small></div>
+          <div class="ba-row"><b>Change a price</b><span>Type <q>Raise the canoe rental to $65.</q> Live in a minute.</span></div>
+          <div class="ba-row"><b>Add a weekend package</b><span>Type <q>Add a Canada Day cabin-and-canoe package at $890.</q> Scout builds the page and links it to your booking calendar.</span></div>
+          <div class="ba-row"><b>Post on social</b><span>Drop in a photo from your phone. Scout writes the caption and schedules it.</span></div>
+          <div class="ba-row"><b>Sell a bigger booking</b><span>The package is the default offer. The single is the add-on.</span></div>
+          <div class="ba-tot"><span>Time per week</span><span class="hl" style="padding:0 8px">About fifteen minutes</span></div>
+        </div>
       </div>
     </div>
 
     <!-- Timeline -->
     <div style="display:flex;flex-direction:column;gap:24px">
-      <h3 style="font-size:28px;font-weight:800;letter-spacing:-.02em">The 14 days</h3>
+      <h3 style="font-size:28px;font-weight:800;letter-spacing:-.02em">What happens over the 14 days, from booking to launch</h3>
       <ol class="steps">
         <li><div class="d">Day 0</div><div class="t">Book your spot.</div><div class="s">Pay the $4,300, fill in one 10-minute form.</div></li>
         <li><div class="d">Day 1</div><div class="t">Kickoff call.</div><div class="s">45 minutes on everything you'll sell next summer.</div></li>
@@ -362,10 +404,10 @@ nav a{color:#fff;text-decoration:none}
   <div class="wrap sec" style="display:flex;flex-direction:column;gap:44px">
     <h2 class="h2">Fair questions, straight answers.</h2>
     <div class="faq">
-      <div><div class="q">Why wouldn't I just get my own Claude subscription?</div><p>You could. The subscription is the cheap part. What you're buying is the setup around it: the site it can edit, the product list, the brand guide, the templates and the rules. That took me two years to get right at Parkbus. You get it in two weeks.</p></div>
-      <div><div class="q">Will it work with my booking system?</div><p>Almost certainly. FareHarbor, Checkfront, Rezdy, Peek, whatever you use. We link to it; we don't replace it.</p></div>
-      <div><div class="q">Do I need to be technical?</div><p>No. You need to be able to type what you want in a sentence. Your Scout shows you the change before it publishes, and you have 30 days of me to call on.</p></div>
-      <div><div class="q">Why would a bus company guy do this?</div><p>Because I'm a tourism operator first. I know what a Saturday in July feels like. I built this for my own business before offering it to yours.</p></div>
+      <details><summary>Why wouldn't I just get my own Claude subscription?</summary><p>You could. The subscription is the cheap part. What you're buying is the setup around it: the site it can edit, the product list, the brand guide, the templates and the rules. That took me two years to get right at Parkbus. You get it in two weeks.</p></details>
+      <details><summary>Will it work with my booking system?</summary><p>Almost certainly. FareHarbor, Checkfront, Rezdy, Peek, whatever you use. We link to it; we don't replace it.</p></details>
+      <details><summary>Do I need to be technical?</summary><p>No. You need to be able to type what you want in a sentence. Your Scout shows you the change before it publishes, and you have 30 days of me to call on.</p></details>
+      <details><summary>Why would a bus company guy do this?</summary><p>Because I'm a tourism operator first. I know what a Saturday in July feels like. I built this for my own business before offering it to yours.</p></details>
     </div>
   </div>
 </div>
