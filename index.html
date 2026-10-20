@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Bookahead: a 14-day sprint that gets small tourism businesses ready to sell summer 2027. Sales Scout, repackaged offers and a season of social content.">
+<title>Bookahead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<style>
+/* Layout: full-width colour bands, 1160px inner column, two-column rows that stack at phone width. Single committed light look (brand page). */
+:root{
+  --brand:#2A1E78; --brand-deep:#170F4F; --ink:#17133A; --ink-2:#2B2652; --ink-3:#4A4570; --mute:#6A6590;
+  --paper:#ffffff; --tint:#F3F1FC; --tint-2:#F7F6FC; --line:#E1DDF3; --line-2:#D6D1EE; --on-brand:#E3DEFF; --on-brand-2:#CFC8F5;
+  --sun:#FFD36B; --sun-deep:#E6B53E; --note:#FFF9E6; --note-line:#F0E3B8; --khaki:#A8803A; --khaki-deep:#8E6A2E; --skin:#FFE3C4; --cheek:#F6A5A0;
+  --font:Figtree,"Helvetica Neue",Arial,system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:19px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--brand)}a:hover{color:var(--brand-deep)}
+ul,ol,p,h1,h2,h3{margin:0}ul,ol{padding:0;list-style:none}
+h1,h2,h3{text-wrap:balance}
+img,svg{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:600px){.wrap{padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:18px;padding:16px 24px;border-radius:0;min-height:44px;transition:transform .12s ease,opacity .12s ease}
+.btn:hover{transform:translateY(-1px);opacity:.94}
+.btn:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.btn-sun{background:var(--sun);color:var(--ink)}.btn-sun:hover{color:var(--ink)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}.btn-ghost:hover{color:#fff}
+.btn .price{font-weight:600;opacity:.75}
+.hl{background:var(--sun);padding:0 5px;border-radius:0}
+.band-brand{background:var(--brand);color:#fff}
+.band-tint{background:var(--tint)}
+.sec{padding-block:96px}
+@media (max-width:700px){.sec{padding-block:64px}}
+.h2{font-size:clamp(32px,3.8vw,48px);line-height:1.1;font-weight:800;letter-spacing:-.03em}
+.lede{font-size:clamp(20px,2vw,25px);line-height:1.4;font-weight:500;color:var(--ink-2)}
+.body{font-size:20px;line-height:1.6;color:var(--ink-2)}
+.small{font-size:15px;color:var(--mute)}
+.eyebrow{font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
+.row{display:flex;flex-wrap:wrap;gap:64px;align-items:center}
+.row>*{min-width:0}
+.col-main{flex:1 1 480px}.col-side{flex:1 1 380px;max-width:520px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media (max-width:860px){.grid3{grid-template-columns:1fr}}
+nav a{color:#fff;text-decoration:none}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:26px}
+.nav .links{display:flex;gap:28px;align-items:center;flex-wrap:wrap;font-size:16px;font-weight:500}
+.nav .cta{background:var(--sun);color:var(--ink);padding:11px 18px;border-radius:0;font-weight:700}
+.wordmark{font-size:26px;font-weight:800;letter-spacing:-.02em;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:9px;line-height:1}
+.wordmark img{width:28px;height:auto;display:block;position:relative;top:-1px}
+.hero{padding:72px 0 96px;display:flex;flex-wrap:wrap;gap:56px;align-items:center}
+.hero>*{min-width:0}
+.hero h1{font-size:clamp(42px,5.4vw,70px);line-height:1.04;font-weight:800;letter-spacing:-.035em}
+.hero .sub{font-size:clamp(19px,1.8vw,22px);line-height:1.5;max-width:560px;color:var(--on-brand)}
+.chat{background:#fff;color:var(--ink);border-radius:10px;overflow:hidden}
+.chat .bar{display:flex;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid #EEEBF8;font-size:14px;color:var(--mute)}
+.chat .bar img{width:34px;height:34px;object-fit:cover;object-position:top;border-radius:50%;background:var(--tint)}
+.chat .msgs{padding:20px 18px;display:flex;flex-direction:column;gap:14px}
+.me{align-self:flex-end;max-width:86%;background:var(--brand);color:#fff;padding:12px 16px;border-radius:12px 12px 2px 12px;font-size:16px;line-height:1.45}
+.scoutmsg{display:flex;gap:10px;align-items:flex-end;max-width:94%}
+.scoutmsg img{width:38px;height:38px;flex:0 0 38px;object-fit:cover;object-position:top;border-radius:50%;background:var(--tint)}
+.scoutmsg .bub{background:var(--tint);padding:14px 16px;border-radius:12px 12px 12px 2px;font-size:16px;line-height:1.45;min-width:0}
+.chat button{font-family:inherit;font-size:15px;padding:10px 16px;min-height:44px;border-radius:4px;cursor:pointer}
+@media (max-width:860px){.badges{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.badges{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.part{background:#fff;border-radius:0;padding:28px 26px;display:flex;flex-direction:column;gap:14px;min-width:0;border-top:8px solid var(--brand)}
+.part h3{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.part p{font-size:17px;line-height:1.55;color:var(--ink-2)}
+.part .fig{margin-top:auto;padding-top:10px}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+@media (max-width:980px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.steps li{display:flex;flex-direction:column;gap:8px;border-top:3px solid var(--brand);padding-top:14px;min-width:0}
+.steps .d{font-size:15px;font-weight:800;color:var(--brand)}
+.steps .t{font-size:19px;font-weight:700;line-height:1.3}
+.steps .s{font-size:16px;line-height:1.5;color:var(--ink-3)}
+.panel{background:var(--brand);color:#fff;border-radius:0;padding:36px 40px;display:flex;gap:32px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+@media (max-width:600px){.panel{padding:28px 24px}}
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 56px}
+@media (max-width:860px){.faq{grid-template-columns:1fr}}
+.faq>div{display:flex;flex-direction:column;gap:8px;min-width:0;border-top:1px solid var(--line-2);padding-top:20px}
+.faq .q{font-size:20px;font-weight:700;line-height:1.3}
+.faq p{font-size:17px;line-height:1.55;color:var(--ink-2)}
+.browser{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.browser .top{display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--tint-2)}
+.browser .top i{width:9px;height:9px;border-radius:0;background:var(--line-2);display:inline-block}
+.browser img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block}
+.price-big{font-size:clamp(44px,5vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--brand)}
+.addr{font-size:19px;font-weight:700;color:var(--brand);text-decoration:underline;text-underline-offset:5px;user-select:all}
+.footer{border-top:1px solid var(--line);padding-block:28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--mute)}
+.footer a{color:var(--mute)}
+.chart{display:flex;flex-direction:column;gap:10px}
+.cap{font-size:14px;color:var(--mute);line-height:1.4}
+.chart text{font-family:var(--font);font-variant-numeric:tabular-nums}
+
+
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+
+/* Comparison sheet */
+.cmp{background:#fff;border:1px solid var(--line);border-radius:0;overflow:hidden}
+.cmp-head,.cmp-row{display:grid;grid-template-columns:180px 1fr 1.3fr;gap:0}
+.cmp-head{background:var(--tint-2);border-bottom:2px solid var(--ink);font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.cmp-head>div{padding:12px 20px}
+.cmp-head .now{color:var(--mute)}.cmp-head .then{color:var(--brand);border-left:1px solid var(--line)}
+.cmp-row{border-bottom:1px solid var(--line)}
+.cmp-row:last-child{border-bottom:0}
+.cmp-row>div{padding:18px 20px;font-size:17px;line-height:1.5;min-width:0}
+.cmp-row .job{font-weight:800;color:var(--ink)}
+.cmp-row .now{color:#7A7596;font-style:italic}
+.cmp-row .then{color:var(--ink-2);border-left:1px solid var(--line);background:var(--tint)}
+.cmp-row .then q{font-style:normal;font-weight:700;color:var(--brand);quotes:"\201C" "\201D"}
+.cmp-row.tot{background:var(--tint-2);border-top:2px solid var(--ink)}
+.cmp-row.tot>div{font-weight:800}
+.cmp-row.tot .now{font-style:normal}
+@media (max-width:760px){.cmp-head{display:none}.cmp-row{grid-template-columns:1fr}.cmp-row>div{padding:12px 18px}.cmp-row .job{padding-bottom:4px}.cmp-row .now::before{content:"Today: ";font-style:normal;font-weight:800;color:var(--mute)}.cmp-row .then{border-left:0}.cmp-row .then::before{content:"With your Scout: ";font-weight:800;color:var(--brand)}}
+/* Scheduled posts */
+.posts{display:flex;flex-direction:column;gap:12px}
+.post{margin:0;position:relative;border-radius:6px;overflow:hidden;aspect-ratio:16/9;background:var(--ink)}
+.post img{width:100%;height:100%;object-fit:cover;display:block}
+.post figcaption{position:absolute;inset:auto 0 0 0;padding:28px 14px 12px;color:#fff;font-size:14px;line-height:1.35;font-weight:600;background:linear-gradient(180deg,rgba(23,19,58,0) 0%,rgba(23,19,58,.78) 100%);text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.post .when{display:block;width:fit-content;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:var(--sun);color:var(--ink);padding:3px 8px;border-radius:2px;margin-bottom:6px;text-shadow:none}
+.post+.post{margin-top:-4px}
+.post:nth-child(2){transform:rotate(-1.2deg)}.post:nth-child(3){transform:rotate(1deg)}
+
+.setup{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);background:#fff}
+@media (max-width:980px){.setup{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.setup{grid-template-columns:1fr}}
+.setup>div{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:6px;min-width:0}
+.setup b{font-size:17px;font-weight:800;line-height:1.25}
+.setup span{font-size:15px;line-height:1.45;color:var(--ink-3)}
+</style>
+
+
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+<!-- Hero band -->
+<div id="top" class="band-brand">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="#top" class="wordmark"><img src="img/mark.webp" alt="">Bookahead</a>
+      <div class="links">
+        <a href="#scout-sec">Sales Scout</a>
+        <a href="#sprint">The Sprint</a>
+        <a href="#questions">Questions</a>
+        <a href="#about">About</a>
+        <a href="mailto:matthew@bookahead.ai" class="cta">Get in touch</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div style="flex:1 1 480px;display:flex;flex-direction:column;gap:28px">
+        <h1>Summer 2027,<br>ready to sell<br>in 14 days.</h1>
+        <p class="sub">For lodges, outfitters, tour operators and attractions. We install your Sales Scout, repackage your summer for bigger bookings, and hand you a whole season of social content. One sprint. One price.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:4px">
+          <a href="#sprint" class="btn btn-sun">The 14-Day Sprint <span class="price">$4,300</span></a>
+          <a href="#scout-sec" class="btn btn-ghost">Meet your Sales Scout</a>
+        </div>
+      </div>
+
+      <!-- Sales Scout demo -->
+      <div style="flex:1 1 380px;max-width:520px">
+        <div class="chat">
+          <div class="bar"><img src="img/scout-head.webp" alt=""><span style="font-weight:600;color:var(--ink)">Your Sales Scout</span><span style="margin-left:auto">yourlodge.ca</span></div>
+          <div class="msgs">
+            <div class="me">Add a Canada Day weekend package. Two nights, big cabin, canoe included, $890. Use the dock photo.</div>
+            <div class="scoutmsg"><img src="img/scout-head.webp" alt="">
+              <div class="bub">
+                <div style="margin-bottom:12px">On it. Here's the package, linked to your booking calendar:</div>
+                <div style="background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px">
+                  <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><strong style="font-size:17px">Canada Day Cabin &amp; Canoe</strong><span style="font-weight:800;color:var(--brand);font-size:18px">$890</span></div>
+                  <div style="font-size:14px;color:var(--mute);margin-top:4px">Two nights, big cabin, canoe included. June 30 to July 2.</div>
+                  <div style="margin-top:12px;display:inline-block;background:var(--brand);color:#fff;font-size:14px;font-weight:700;padding:8px 14px;border-radius:4px">Book now</div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;gap:10px;justify-content:flex-end">
+              <button type="button" id="demo-undo" style="font-weight:600;border:1px solid var(--line-2);background:#fff;color:var(--ink)">Undo</button>
+              <button type="button" id="demo-publish" style="font-weight:700;border:0;background:var(--ink);color:#fff">Publish</button>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:14px;font-size:15px;color:var(--on-brand-2)">Say it, check it, publish it. No web developer, no ticket.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Proof -->
+<div style="background:var(--paper)">
+  <div class="wrap sec row">
+    <div class="col-main" style="display:flex;flex-direction:column;gap:24px">
+      <h2 class="h2">I built this for my own company first.</h2>
+      <div class="body" style="display:flex;flex-direction:column;gap:18px">
+        <p>Parkbus runs bus trips from Toronto and Vancouver to Canada's parks. Two people run the whole thing, coast to coast, and revenue has grown about 30% a year for two years.</p>
+        <p>The difference is the system: a site I change by typing a sentence, packages built to sell, and a season of content made before the season starts. <span class="hl">It saves me at least 10 hours a week.</span></p>
+      </div>
+      <div class="chart" style="max-width:460px;margin-top:8px">
+        <svg viewBox="0 0 460 210" role="img" aria-label="Parkbus revenue indexed to 2024: 100, 130, 169">
+          <line x1="40" y1="170" x2="440" y2="170" stroke="#D6D1EE" stroke-width="1.5"/>
+          <rect x="70" y="106" width="90" height="64" rx="6" fill="#CFC8F5"/>
+          <rect x="185" y="87" width="90" height="83" rx="6" fill="#2A1E78"/>
+          <rect x="300" y="62" width="90" height="108" rx="6" fill="#FFD36B"/>
+          <text x="115" y="96" text-anchor="middle" font-size="18" font-weight="800" fill="#4A4570">100</text>
+          <text x="230" y="77" text-anchor="middle" font-size="18" font-weight="800" fill="#2A1E78">130</text>
+          <text x="345" y="52" text-anchor="middle" font-size="18" font-weight="800" fill="#17133A">169</text>
+          <text x="115" y="194" text-anchor="middle" font-size="15" fill="#6A6590">2024</text>
+          <text x="230" y="194" text-anchor="middle" font-size="15" fill="#6A6590">2025</text>
+          <text x="345" y="194" text-anchor="middle" font-size="15" fill="#6A6590">2026</text>
+          <path d="M115 100 Q230 40 345 56" fill="none" stroke="#17133A" stroke-width="2" stroke-dasharray="4 5" opacity=".5"/>
+        </svg>
+        <div class="cap">Parkbus revenue, indexed to 2024. About 30% growth a year, two years running, with the same two people.</div>
+      </div>
+    </div>
+
+    <div class="col-side" style="display:flex;flex-direction:column;gap:20px">
+      <div style="font-size:15px;font-weight:700;color:var(--mute)">Built and run with this system</div>
+      <a href="https://parkbus.ca" style="display:block;text-decoration:none;color:var(--ink)">
+        <div class="browser">
+          <div class="top"><span style="margin-left:8px;font-size:13px;font-weight:600;color:var(--ink-3)">parkbus.ca</span><span style="margin-left:auto;font-size:13px;color:var(--mute)">Rebuilt fall 2026</span></div>
+          <img src="img/parkbus.webp" alt="The parkbus.ca homepage">
+        </div>
+      </a>
+      <a href="https://www.visitcanadaparks.ca" style="display:block;text-decoration:none;color:var(--ink)">
+        <div class="browser">
+          <div class="top"><span style="margin-left:8px;font-size:13px;font-weight:600;color:var(--ink-3)">visitcanadaparks.ca</span><span style="margin-left:auto;font-size:13px;color:var(--mute)">Launched October 2026</span></div>
+          <img src="img/visitcanadaparks.webp" alt="The visitcanadaparks.ca homepage">
+        </div>
+      </a>
+      <p class="small" style="line-height:1.5">300,000+ riders since 2010. 4.6 on Google. Featured in National Geographic, CBC and The Globe and Mail.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Meet your Sales Scout -->
+<div id="scout-sec" class="band-tint">
+  <div class="wrap sec" style="display:flex;flex-direction:column;gap:56px">
+    <div class="row" style="gap:48px">
+      <div style="flex:1 1 380px;max-width:560px;display:flex;justify-content:center">
+        <img src="img/scout-hero.webp" alt="The Sales Scout looking out over a lake with binoculars" style="width:100%;height:auto">
+      </div>
+      <div class="col-main" style="display:flex;flex-direction:column;gap:22px">
+        <div class="eyebrow">Meet your Sales Scout</div>
+        <h2 class="h2">Not new software. A system, set up around your business.</h2>
+        <div class="body" style="display:flex;flex-direction:column;gap:16px">
+          <p>Sales Scout is Claude, the AI assistant, installed on your computer with your business built around it. On its own, Claude is a clever stranger. With the setup, it's a member of staff who knows the job.</p>
+          <p>You tell it what you want in plain English. It makes the change, shows you, and publishes only when you say yes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <h3 style="font-size:22px;font-weight:800;letter-spacing:-.02em">What we set up in the Sprint</h3>
+      <div class="setup">
+        <div><b>Your website's code</b><span>Built so the Scout can edit any page and publish in a minute.</span></div>
+        <div><b>Your product and price list</b><span>Every tour, room, rental and package, with dates and minimums.</span></div>
+        <div><b>Your brand guide</b><span>Colours, photos, tone, the words you use and the words you don't.</span></div>
+        <div><b>Templates</b><span>For a new package page, a sold-out notice, a social post, a season announcement.</span></div>
+        <div><b>House rules</b><span>What it can change on its own, what needs your okay, and what it never touches.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- The Sprint -->
+<div id="sprint" style="background:var(--paper)">
+  <div class="wrap sec" style="display:flex;flex-direction:column;gap:64px">
+
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;justify-content:space-between">
+      <div style="display:flex;flex-direction:column;gap:16px;flex:1 1 480px;min-width:0">
+        <h2 style="font-size:clamp(36px,4.4vw,58px);line-height:1.05;font-weight:800;letter-spacing:-.03em">The 14-Day Bookahead Sprint</h2>
+        <p class="lede" style="max-width:680px">Three things built and installed in two weeks, so summer 2027 is on sale before the snow melts.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start">
+        <div class="price-big">$4,300</div>
+        <div style="font-size:15px;color:var(--ink-3)">CAD. One price. Fixed scope.</div>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="part">
+        <div class="eyebrow">Part one</div>
+        <h3>Your Sales Scout, set up</h3>
+        <p>Claude on your computer, with your site, your products, your brand guide, your templates and your house rules built around it. Seasonal hours, a new weekend activity, a price change: say it in plain English and it's live in a minute, on-brand.</p>
+        <div class="fig" style="display:flex;justify-content:center"><img src="img/scout-tablet.webp" alt="The Sales Scout working on a tablet" style="width:min(100%,200px);height:auto"></div>
+      </div>
+      <div class="part">
+        <div class="eyebrow">Part two</div>
+        <h3>The Summer Revenue Upgrade</h3>
+        <p>We go through every tour, package, room and experience you'll run next summer and rebuild how it's sold. Low-margin singles get bundled into high-ticket experiences, friction comes out, and the bigger booking becomes the default.</p>
+        <div class="fig chart">
+          <svg viewBox="0 0 300 150" role="img" aria-label="Example: a $45 rental repackaged as a $189 Day on the Lake">
+            <line x1="20" y1="120" x2="280" y2="120" stroke="#D6D1EE" stroke-width="1.5"/>
+            <rect x="50" y="98" width="70" height="22" rx="5" fill="#CFC8F5"/>
+            <rect x="180" y="30" width="70" height="90" rx="5" fill="#FFD36B"/>
+            <text x="85" y="88" text-anchor="middle" font-size="17" font-weight="800" fill="#4A4570">$45</text>
+            <text x="215" y="20" text-anchor="middle" font-size="17" font-weight="800" fill="#17133A">$189</text>
+            <text x="85" y="140" text-anchor="middle" font-size="13" fill="#6A6590">Canoe rental</text>
+            <text x="215" y="140" text-anchor="middle" font-size="13" fill="#6A6590">Day on the Lake</text>
+            <path d="M125 95 Q150 50 175 45" fill="none" stroke="#2A1E78" stroke-width="2" marker-end="url(#arr)"/>
+            <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2A1E78"/></marker></defs>
+          </svg>
+          <div class="cap">Example: the same canoe, sold as a package with lunch and a guided hour.</div>
+        </div>
+      </div>
+      <div class="part">
+        <div class="eyebrow">Part three</div>
+        <h3>The Full-Season Content Engine</h3>
+        <p>A whole summer of social media, done before the season starts. Custom templates in your colours and voice, plus a posting calendar. Drop in a photo from your phone and your Scout writes the post.</p>
+        <div class="fig posts">
+          <figure class="post"><img src="img/post-1.webp" alt=""><figcaption><span class="when">Sat Jul 4 &middot; 7:30 am</span>The lake at 7am, before anyone else is up. Canoes go out at 9.</figcaption></figure>
+          <figure class="post"><img src="img/post-2.webp" alt=""><figcaption><span class="when">Thu Jul 30 &middot; 6:00 pm</span>Three cabins left for the long weekend. That's it until September.</figcaption></figure>
+          <figure class="post"><img src="img/post-3.webp" alt=""><figcaption><span class="when">Sun Aug 16 &middot; 5:00 pm</span>Best seat in the park. Day-on-the-Lake packages still open this week.</figcaption></figure>
+          <div class="cap">Three of the summer's posts, written and scheduled in May from your own photos.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Before / after -->
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <h3 style="font-size:28px;font-weight:800;letter-spacing:-.02em">Four jobs, before and after the Sprint</h3>
+      <p class="body" style="max-width:680px">Same business, same four jobs. The left column is how most operators do them today. The right column is what you do once your Scout is installed.</p>
+      <div class="cmp">
+        <div class="cmp-head"><div></div><div class="now">Today</div><div class="then">With your Scout</div></div>
+        <div class="cmp-row"><div class="job">Change a price</div><div class="now">Find the login. Or email your web person and wait a week.</div><div class="then">Type <q>Raise the canoe rental to $65.</q> Live in a minute.</div></div>
+        <div class="cmp-row"><div class="job">Add a weekend package</div><div class="now">Copy an old page, break the layout, give up.</div><div class="then">Type <q>Add a Canada Day cabin-and-canoe package at $890.</q> Scout builds the page and links it to your booking calendar.</div></div>
+        <div class="cmp-row"><div class="job">Post on social</div><div class="now">Stare at the phone. Post the same photo as last year.</div><div class="then">Drop in a photo from your phone. Scout writes the caption and schedules it.</div></div>
+        <div class="cmp-row"><div class="job">Sell a bigger booking</div><div class="now">Hope guests find the add-ons in a dropdown.</div><div class="then">The package is the default offer. The single is the add-on.</div></div>
+        <div class="cmp-row tot"><div class="job">Time per week</div><div class="now">A day, if you get to it</div><div class="then"><span class="hl" style="padding:0 8px">About fifteen minutes</span></div></div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <h3 style="font-size:28px;font-weight:800;letter-spacing:-.02em">The 14 days</h3>
+      <ol class="steps">
+        <li><div class="d">Day 0</div><div class="t">Book your spot.</div><div class="s">Pay the $4,300, fill in one 20-minute form.</div></li>
+        <li><div class="d">Day 1</div><div class="t">Kickoff call.</div><div class="s">45 minutes on everything you'll sell next summer.</div></li>
+        <li><div class="d">Day 7</div><div class="t">The draft.</div><div class="s">Real site, repackaged line-up, one round of changes.</div></li>
+        <li><div class="d">Day 12</div><div class="t">The final.</div><div class="s">Last round. Your content vault and calendar arrive.</div></li>
+        <li><div class="d">Day 14</div><div class="t">Live and handed over.</div><div class="s">Scout installed, half-day walkthrough done.</div></li>
+      </ol>
+    </div>
+
+    <div class="panel">
+      <div style="display:flex;flex-direction:column;gap:6px;max-width:620px">
+        <div style="font-size:22px;font-weight:800">The guarantee</div>
+        <p style="font-size:18px;line-height:1.5;color:var(--on-brand)">See the day-7 draft, don't want to continue? Say so. Full refund. And you own every account: the site, the code, the Scout. Leave anytime and take it all with you.</p>
+      </div>
+      <a href="mailto:matthew@bookahead.ai?subject=The%2014-Day%20Bookahead%20Sprint" class="btn btn-sun">Book a Sprint <span class="price">$4,300</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- Questions -->
+<div id="questions" class="band-tint">
+  <div class="wrap sec" style="display:flex;flex-direction:column;gap:44px">
+    <h2 class="h2">Fair questions, straight answers.</h2>
+    <div class="faq">
+      <div><div class="q">Why wouldn't I just get my own Claude subscription?</div><p>You could. The subscription is the cheap part. What you're buying is the setup around it: the site it can edit, the product list, the brand guide, the templates and the rules. That took me two years to get right at Parkbus. You get it in two weeks.</p></div>
+      <div><div class="q">Will it work with my booking system?</div><p>Almost certainly. FareHarbor, Checkfront, Rezdy, Peek, whatever you use. We link to it; we don't replace it.</p></div>
+      <div><div class="q">Do I need to be technical?</div><p>No. You need to be able to type what you want in a sentence. Your Scout shows you the change before it publishes, and you have 30 days of me to call on.</p></div>
+      <div><div class="q">Why would a bus company guy do this?</div><p>Because I'm a tourism operator first. I know what a Saturday in July feels like. I built this for my own business before offering it to yours.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<div id="about" style="background:var(--paper)">
+  <div class="wrap sec" style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <img src="img/matthew.webp" alt="Matthew Thomas" style="width:88px;height:88px;object-fit:cover;display:block;border-radius:50%;flex:0 0 88px">
+      <h2 class="h2">Hi, I'm Matthew Thomas.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px">
+      <p>Fifteen years in Canadian tourism. I run Parkbus, which has carried more than 300,000 people to Canada's parks since 2010 with official partnerships with Parks Canada and VIA Rail, and Visit Canada Parks. Earlier I co-founded Whereabouts, a CRM for destination organizations.</p>
+      <p>Bookahead exists because other operators kept asking how two people run a coast-to-coast company. This is the answer: <span class="hl">practical, specific, and done in two weeks.</span></p>
+    </div>
+    <a href="mailto:matthew@bookahead.ai" class="addr">matthew@bookahead.ai</a>
+  </div>
+</div>
+
+<!-- Closing -->
+<div class="band-brand">
+  <div class="wrap sec row" style="gap:40px;justify-content:space-between">
+    <img src="img/scout-pointing.webp" alt="" style="width:min(300px,60vw);height:auto;flex:0 0 auto">
+    <div style="flex:1 1 480px;display:flex;flex-direction:column;gap:32px;align-items:flex-start">
+      <h2 style="font-size:clamp(34px,4.4vw,60px);line-height:1.05;font-weight:800;letter-spacing:-.03em;max-width:760px">Fourteen days from now, summer 2027 could already be selling.</h2>
+      <p style="font-size:20px;line-height:1.5;color:var(--on-brand);max-width:600px">Tell me about your business. If the Sprint is a fit, I'll say so and we start. If it isn't, I'll tell you that too.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="mailto:matthew@bookahead.ai?subject=The%2014-Day%20Bookahead%20Sprint" class="btn btn-sun">Book the Sprint <span class="price">$4,300</span></a>
+        <a href="mailto:matthew@bookahead.ai?subject=Bookahead" class="btn btn-ghost">Ask a question first</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="background:var(--paper)">
+  <div class="wrap footer">
+    <div><span style="font-weight:800;color:var(--brand);font-size:17px">Bookahead</span> is an initiative by Matthew Thomas, MDES.</div>
+    <div style="display:flex;gap:22px;flex-wrap:wrap">
+      <a href="https://parkbus.ca">Parkbus</a>
+      <a href="https://visitcanadaparks.ca">Visit Canada Parks</a>
+      <a href="mailto:matthew@bookahead.ai">matthew@bookahead.ai</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var p=document.getElementById('demo-publish'),u=document.getElementById('demo-undo');
+  if(!p||!u)return;
+  p.addEventListener('click',function(){p.textContent='Published';p.disabled=true;p.style.opacity='.7';});
+  u.addEventListener('click',function(){p.textContent='Publish';p.disabled=false;p.style.opacity='1';});
+})();
+</script>
+
+</body>
+</html>
