@@ -66,7 +66,8 @@ nav .wordmark:hover{color:var(--sun)}
 .scoutmsg img{width:38px;height:38px;flex:0 0 38px;object-fit:cover;object-position:top;border-radius:50%;background:var(--tint)}
 .scoutmsg .bub{background:var(--tint);padding:14px 16px;border-radius:12px 12px 12px 2px;font-size:16px;line-height:1.45;min-width:0}
 .chat button{font-family:inherit;font-size:15px;padding:10px 16px;min-height:44px;border-radius:4px;cursor:pointer}
-.chat .msgs{min-height:300px}
+.chat .msgs{height:380px;overflow-y:auto;overscroll-behavior:contain;scroll-behavior:smooth}
+@media (max-width:600px){.chat .msgs{height:340px}}
 .chat-actions{display:flex;gap:10px;justify-content:flex-end;padding:0 18px 18px}
 .chat .live{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--brand);margin-left:4px}
 .chat .live i{width:8px;height:8px;border-radius:50%;background:#2BB673;animation:blink 1.4s ease-in-out infinite}
@@ -569,11 +570,12 @@ nav .wordmark:hover{color:var(--sun)}
   ];
   var i=0,timer=null;
   function el(h){var d=document.createElement('div');d.innerHTML=h;return d.firstChild;}
+  function pin(){box.scrollTop=box.scrollHeight;}
   function wait(ms){return new Promise(function(r){timer=setTimeout(r,reduce?0:ms);});}
   function setPub(label,dis){pub.textContent=label;pub.disabled=dis;pub.style.opacity=dis?'.7':'1';}
   async function typeInto(node,text){
     if(reduce){node.textContent=text;return;}
-    for(var k=0;k<text.length;k++){node.textContent=text.slice(0,k+1);await wait(22+Math.random()*30);}
+    for(var k=0;k<text.length;k++){node.textContent=text.slice(0,k+1);if(k%8==0)pin();await wait(22+Math.random()*30);}
   }
   async function play(){
     var s=scenes[i%scenes.length];i++;
@@ -581,11 +583,11 @@ nav .wordmark:hover{color:var(--sun)}
     var me=el('<div class="me"></div>');box.appendChild(me);
     await typeInto(me,s.ask);await wait(600);
     var typing=el('<div class="scoutmsg"><img src="'+HEAD+'" alt=""><div class="bub"><span class="dots"><i></i><i></i><i></i></span></div></div>');
-    box.appendChild(typing);await wait(1100);
-    typing.querySelector('.bub').innerHTML='<div style="margin-bottom:12px">'+s.reply+'</div><div class="card-in" style="background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px">'+s.card+'</div>';
+    box.appendChild(typing);pin();await wait(1100);
+    typing.querySelector('.bub').innerHTML='<div style="margin-bottom:12px">'+s.reply+'</div><div class="card-in" style="background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px">'+s.card+'</div>';pin();
     await wait(900);setPub('Publish',false);pub.classList.add('pulse');await wait(1400);
     pub.classList.remove('pulse');setPub('Published',true);
-    var ok=el('<div class="scoutmsg"><img src="'+HEAD+'" alt=""><div class="bub">'+s.done+'</div></div>');box.appendChild(ok);
+    var ok=el('<div class="scoutmsg"><img src="'+HEAD+'" alt=""><div class="bub">'+s.done+'</div></div>');box.appendChild(ok);pin();
     await wait(2600);play();
   }
   pub.addEventListener('click',function(){if(!pub.disabled){clearTimeout(timer);setPub('Published',true);}});
