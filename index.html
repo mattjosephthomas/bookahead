@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Bookahead: 14 days, guaranteed, to get a small tourism business ready to sell summer 2027. Sales Scout, better packages and a whole summer of marketing.">
+<meta name="description" content="Bookahead: a done-for-you revenue system for independent tourism operators, powered by your own AI assistant. 14 days, guaranteed.">
 <title>Bookahead</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
@@ -66,6 +66,16 @@ nav .wordmark:hover{color:var(--sun)}
 .scoutmsg img{width:38px;height:38px;flex:0 0 38px;object-fit:cover;object-position:top;border-radius:50%;background:var(--tint)}
 .scoutmsg .bub{background:var(--tint);padding:14px 16px;border-radius:12px 12px 12px 2px;font-size:16px;line-height:1.45;min-width:0}
 .chat button{font-family:inherit;font-size:15px;padding:10px 16px;min-height:44px;border-radius:4px;cursor:pointer}
+.chat .msgs{min-height:300px}
+.chat-actions{display:flex;gap:10px;justify-content:flex-end;padding:0 18px 18px}
+.chat .live{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--brand);margin-left:4px}
+.chat .live i{width:8px;height:8px;border-radius:50%;background:#2BB673;animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.dots{display:inline-flex;gap:4px;padding:4px 2px}.dots i{width:7px;height:7px;border-radius:50%;background:var(--mute);animation:bounce 1s infinite}.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,80%,100%{transform:translateY(0);opacity:.5}40%{transform:translateY(-4px);opacity:1}}
+.card-in{animation:cardin .35s ease-out}@keyframes cardin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.pulse{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,211,107,.9)}50%{box-shadow:0 0 0 8px rgba(255,211,107,0)}}
+@media (prefers-reduced-motion:reduce){.chat .live i,.dots i,.card-in,.pulse{animation:none}}
 @media (max-width:860px){.badges{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:520px){.badges{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .parts{display:flex;flex-direction:column}
@@ -137,6 +147,7 @@ nav .wordmark:hover{color:var(--sun)}
 .how .n{width:44px;height:44px;display:grid;place-items:center;background:var(--sun);color:var(--ink);font-weight:800;font-size:20px}
 .how h3{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
 .how p{font-size:17px;line-height:1.55;color:var(--ink-2)}
+.who{font-size:17px;line-height:1.5;color:var(--ink-2);max-width:680px;border-left:4px solid var(--sun);padding-left:14px}
 .num{width:40px;height:40px;display:grid;place-items:center;background:var(--brand);color:#fff;font-weight:800;font-size:18px}
 .exhibits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start;padding:8px 0}
 @media (max-width:860px){.exhibits{grid-template-columns:1fr}}
@@ -151,6 +162,26 @@ nav .wordmark:hover{color:var(--sun)}
 .sig img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:0 0 52px}
 .sig b{display:block;font-size:17px;font-weight:800}
 .sig span{display:block;font-size:14px;color:var(--mute)}
+/* After day 14 */
+.after{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);background:#fff}
+@media (max-width:980px){.after{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.after{grid-template-columns:1fr}}
+.after>div{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px;min-width:0}
+.after b{font-size:18px;font-weight:800;line-height:1.25}
+.after span{font-size:16px;line-height:1.5;color:var(--ink-3)}
+/* Worth it */
+.worth{display:flex;flex-wrap:wrap;gap:32px 64px;align-items:center;padding:48px 0;border-top:1px solid var(--line-2)}
+.worth>*{min-width:0}
+.worth-text{flex:1 1 380px;display:flex;flex-direction:column;gap:14px}
+.worth-text h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.worth-text p{font-size:18px;line-height:1.55;color:var(--ink-2)}
+.worth-table{flex:1 1 360px;max-width:520px;border-collapse:collapse;font-size:17px;font-variant-numeric:tabular-nums;background:#fff;border:1px solid var(--line)}
+.worth-table th,.worth-table td{padding:12px 16px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+.worth-table td:first-child{white-space:normal}
+.worth-table th:first-child,.worth-table td:first-child{text-align:left}
+.worth-table th{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);background:var(--tint-2)}
+.worth-table th:last-child,.worth-table td:last-child{color:var(--brand);font-weight:700}
+.worth-table tr.tot td{font-weight:800;color:var(--ink);border-top:2px solid var(--ink);border-bottom:0}
 /* Before / after */
 .ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 @media (max-width:860px){.ba{grid-template-columns:1fr}}
@@ -210,27 +241,13 @@ nav .wordmark:hover{color:var(--sun)}
 
       <!-- Sales Scout demo -->
       <div style="flex:1 1 380px;max-width:520px">
-        <div class="chat">
-          <div class="bar"><img src="img/scout-head.webp" alt=""><span style="font-weight:600;color:var(--ink)">Your Sales Scout</span><span style="margin-left:auto">yourbusiness.ca</span></div>
-          <div class="msgs">
-            <div class="me">Add a long-weekend package. Two nights, big cabin, canoe included, $890. Use the dock photo.</div>
-            <div class="scoutmsg"><img src="img/scout-head.webp" alt="">
-              <div class="bub">
-                <div style="margin-bottom:12px">On it. Here's the package, linked to your booking calendar:</div>
-                <div style="background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px">
-                  <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><strong style="font-size:17px">Long Weekend Cabin &amp; Canoe</strong><span style="font-weight:800;color:var(--brand);font-size:18px">$890</span></div>
-                  <div style="font-size:14px;color:var(--mute);margin-top:4px">Two nights, big cabin, canoe included. Long weekends, July to September.</div>
-                  <div style="margin-top:12px;display:inline-block;background:var(--brand);color:#fff;font-size:14px;font-weight:700;padding:8px 14px;border-radius:4px">Book now</div>
-                </div>
-              </div>
-            </div>
-            <div style="display:flex;gap:10px;justify-content:flex-end">
-              <button type="button" id="demo-undo" style="font-weight:600;border:1px solid var(--line-2);background:#fff;color:var(--ink)">Undo</button>
-              <button type="button" id="demo-publish" style="font-weight:700;border:0;background:var(--ink);color:#fff">Publish</button>
-            </div>
-          </div>
+        <div class="chat" id="demo">
+          <div class="bar"><img src="img/scout-head.webp" alt=""><span style="font-weight:600;color:var(--ink)">Your Sales Scout</span><span class="live"><i></i>Live demo</span><span style="margin-left:auto">yourbusiness.ca</span></div>
+          <div class="msgs" id="demo-msgs" aria-live="polite"></div>
+          <div class="chat-actions"><button type="button" id="demo-undo" style="font-weight:600;border:1px solid var(--line-2);background:#fff;color:var(--ink)">Undo</button><button type="button" id="demo-publish" style="font-weight:700;border:0;background:var(--ink);color:#fff">Publish</button></div>
         </div>
-        <p style="margin-top:14px;font-size:15px;color:var(--on-brand-2)">Say it, check it, publish it. No web developer needed.</p>
+        <noscript><p style="margin-top:14px;font-size:15px;color:var(--on-brand-2)">"Add a long-weekend package. Two nights, big cabin, canoe included, $890." Scout builds the page; you press Publish.</p></noscript>
+        <p style="margin-top:14px;font-size:15px;color:var(--on-brand-2)">Say it, check it, publish it. No web developer needed. The demo above plays on its own; three real requests, in order.</p>
       </div>
     </div>
   </div>
@@ -242,7 +259,7 @@ nav .wordmark:hover{color:var(--sun)}
     <div style="display:flex;flex-direction:column;gap:16px;max-width:760px">
       <div class="eyebrow">Meet your Sales Scout</div>
       <h2 class="h2">How does it work?</h2>
-      <p class="lede">Sales Scout is an AI assistant built on top of Claude, installed on your computer with your business built around it. On its own, Claude is a clever stranger. With the setup, it knows your products, prices, brand and rules.</p>
+      <p class="lede">Bookahead is a done-for-you revenue system, powered by your own AI assistant. We do the work up front: the site, the packages, the season of content. Sales Scout is what keeps it running afterwards. It's an AI assistant built on top of Claude, installed on your computer with your business built around it. On its own, Claude is a clever stranger. With the setup, it knows your products, prices, brand and rules.</p>
     </div>
     <ol class="how">
       <li><div class="n">1</div><h3>We set it up around your business.</h3><p>Your website, products, prices, brand and templates, built in so it can do useful work from day one.</p></li>
@@ -315,7 +332,8 @@ nav .wordmark:hover{color:var(--sun)}
       <div style="display:flex;flex-direction:column;gap:16px;flex:1 1 480px;min-width:0">
         <div class="eyebrow">14 days, guaranteed</div>
         <h2 style="font-size:clamp(36px,4.4vw,58px);line-height:1.05;font-weight:800;letter-spacing:-.03em">A better website. Better packages. A whole summer of marketing.</h2>
-        <p class="lede" style="max-width:680px">Three upgrades, built around your business and delivered in 14 days, guaranteed, so summer 2027 is ready to sell before the snow melts.</p>
+        <p class="lede" style="max-width:680px">A done-for-you revenue system, powered by your own AI assistant. Three upgrades, built around your business and delivered in 14 days, guaranteed, so summer 2027 is ready to sell before the snow melts.</p>
+        <p class="who"><b>Who this is for:</b> independent operators selling bookable experiences, accommodation or rentals. Seasonal demand, a small team, and no marketing department.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start">
         <div class="price-big">$4,300</div>
@@ -378,6 +396,25 @@ nav .wordmark:hover{color:var(--sun)}
       </div>
     </div>
 
+    <!-- Worth it -->
+    <div class="worth">
+      <div class="worth-text">
+        <div class="eyebrow">Is it worth $4,300?</div>
+        <h3>One product, repackaged, pays for the whole thing.</h3>
+        <p>Take the canoe. Say you rent 20 a week at $45. Package it with lunch and a guided hour at $189, put that first, and suppose 6 of those 20 guests take it. Same canoes, same staff. The difference over a 16-week summer is below.</p>
+        <p class="small">An illustration, not a customer result. Your numbers will be different; we work them out on the kickoff call.</p>
+      </div>
+      <table class="worth-table">
+        <thead><tr><th></th><th>Today</th><th>Repackaged</th></tr></thead>
+        <tbody>
+          <tr><td>Canoe rentals, per week</td><td>20 &times; $45</td><td>14 &times; $45</td></tr>
+          <tr><td>Day on the Lake packages</td><td>&mdash;</td><td>6 &times; $189</td></tr>
+          <tr><td>Revenue per week</td><td>$900</td><td>$1,764</td></tr>
+          <tr class="tot"><td>Extra revenue, 16-week summer</td><td></td><td><span class="hl" style="padding:0 8px">+$13,800</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <!-- Before / after -->
     <div style="display:flex;flex-direction:column;gap:24px">
       <h3 style="font-size:28px;font-weight:800;letter-spacing:-.02em">How things get done, before and after Sales Scout</h3>
@@ -412,6 +449,17 @@ nav .wordmark:hover{color:var(--sun)}
         <li><div class="d">Day 12</div><div class="t">The final.</div><div class="s">Last round. Your content vault and calendar arrive.</div></li>
         <li><div class="d">Day 14</div><div class="t">Live and handed over.</div><div class="s">Scout installed, half-day walkthrough done.</div></li>
       </ol>
+    </div>
+
+    <!-- After day 14 -->
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <h3 style="font-size:28px;font-weight:800;letter-spacing:-.02em">What happens after day 14</h3>
+      <div class="after">
+        <div><b>You own all of it.</b><span>The site, the code and the accounts are yours. Hosting is about $25 a month, often free. Your domain stays wherever it is now.</span></div>
+        <div><b>Sales Scout runs on your computer.</b><span>It uses your own Claude subscription, about $25 a month, paid to Anthropic. There is no Bookahead subscription.</span></div>
+        <div><b>You make the changes.</b><span>Prices, dates, packages, posts: you ask, it does. Most operators spend about an hour a week on it.</span></div>
+        <div><b>Help when you need it.</b><span>30 days of email support are included. After that, a monthly care plan or help by the hour, whichever suits.</span></div>
+      </div>
     </div>
 
     <div class="panel">
@@ -501,10 +549,48 @@ nav .wordmark:hover{color:var(--sun)}
 
 <script>
 (function(){
-  var p=document.getElementById('demo-publish'),u=document.getElementById('demo-undo');
-  if(!p||!u)return;
-  p.addEventListener('click',function(){p.textContent='Published';p.disabled=true;p.style.opacity='.7';});
-  u.addEventListener('click',function(){p.textContent='Publish';p.disabled=false;p.style.opacity='1';});
+  var box=document.getElementById('demo-msgs'),pub=document.getElementById('demo-publish'),undo=document.getElementById('demo-undo');
+  if(!box||!pub)return;
+  var HEAD=document.querySelector('#demo .bar img').getAttribute('src');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var scenes=[
+    {ask:"Add a long-weekend package. Two nights, big cabin, canoe included, $890. Use the dock photo.",
+     reply:"On it. Here's the package, linked to your booking calendar:",
+     card:'<div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><strong style="font-size:17px">Long Weekend Cabin &amp; Canoe</strong><span style="font-weight:800;color:var(--brand);font-size:18px">$890</span></div><div style="font-size:14px;color:var(--mute);margin-top:4px">Two nights, big cabin, canoe included. Long weekends, July to September.</div><div style="margin-top:12px;display:inline-block;background:var(--brand);color:#fff;font-size:14px;font-weight:700;padding:8px 14px;border-radius:4px">Book now</div>',
+     done:"Published. The package is live on your site and in your booking calendar."},
+    {ask:"Raise the canoe rental to $65 from June 1.",
+     reply:"Done. Updated on the rentals page and in your price list:",
+     card:'<div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><strong style="font-size:17px">Canoe rental, half day</strong><span style="font-size:18px"><s style="color:var(--mute);font-weight:600">$55</s> <span style="font-weight:800;color:var(--brand)">$65</span></span></div><div style="font-size:14px;color:var(--mute);margin-top:4px">New price from June 1. Bookings already made keep the old price.</div>',
+     done:"Published. Rentals page updated."},
+    {ask:"Mark the July 12 sunset paddle sold out and add a waitlist.",
+     reply:"Done. Here's the trip card as guests will see it:",
+     card:'<div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><strong style="font-size:17px">Sunset Paddle, July 12</strong><span style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--sun);padding:4px 8px">Sold out</span></div><div style="font-size:14px;color:var(--mute);margin-top:4px">Join the waitlist and we\'ll email you if a spot opens.</div><div style="margin-top:12px;display:inline-block;border:2px solid var(--brand);color:var(--brand);font-size:14px;font-weight:700;padding:6px 12px;border-radius:4px">Join waitlist</div>',
+     done:"Published. Waitlist form is live."}
+  ];
+  var i=0,timer=null;
+  function el(h){var d=document.createElement('div');d.innerHTML=h;return d.firstChild;}
+  function wait(ms){return new Promise(function(r){timer=setTimeout(r,reduce?0:ms);});}
+  function setPub(label,dis){pub.textContent=label;pub.disabled=dis;pub.style.opacity=dis?'.7':'1';}
+  async function typeInto(node,text){
+    if(reduce){node.textContent=text;return;}
+    for(var k=0;k<text.length;k++){node.textContent=text.slice(0,k+1);await wait(22+Math.random()*30);}
+  }
+  async function play(){
+    var s=scenes[i%scenes.length];i++;
+    box.innerHTML='';setPub('Publish',true);
+    var me=el('<div class="me"></div>');box.appendChild(me);
+    await typeInto(me,s.ask);await wait(600);
+    var typing=el('<div class="scoutmsg"><img src="'+HEAD+'" alt=""><div class="bub"><span class="dots"><i></i><i></i><i></i></span></div></div>');
+    box.appendChild(typing);await wait(1100);
+    typing.querySelector('.bub').innerHTML='<div style="margin-bottom:12px">'+s.reply+'</div><div class="card-in" style="background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px">'+s.card+'</div>';
+    await wait(900);setPub('Publish',false);pub.classList.add('pulse');await wait(1400);
+    pub.classList.remove('pulse');setPub('Published',true);
+    var ok=el('<div class="scoutmsg"><img src="'+HEAD+'" alt=""><div class="bub">'+s.done+'</div></div>');box.appendChild(ok);
+    await wait(2600);play();
+  }
+  pub.addEventListener('click',function(){if(!pub.disabled){clearTimeout(timer);setPub('Published',true);}});
+  undo.addEventListener('click',function(){clearTimeout(timer);i=Math.max(0,i-1);play();});
+  play();
 })();
 </script>
 
