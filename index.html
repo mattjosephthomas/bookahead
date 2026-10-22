@@ -187,19 +187,6 @@ nav .wordmark:hover{color:var(--sun)}
 .after>div{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px;min-width:0}
 .after b{font-size:18px;font-weight:800;line-height:1.25}
 .after span{font-size:16px;line-height:1.5;color:var(--ink-3)}
-/* Worth it */
-.worth{display:flex;flex-wrap:wrap;gap:32px 64px;align-items:center;padding:48px 0;border-top:1px solid var(--line-2)}
-.worth>*{min-width:0}
-.worth-text{flex:1 1 380px;display:flex;flex-direction:column;gap:14px}
-.worth-text h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
-.worth-text p{font-size:18px;line-height:1.55;color:var(--ink-2)}
-.worth-table{flex:1 1 360px;max-width:520px;border-collapse:collapse;font-size:17px;font-variant-numeric:tabular-nums;background:#fff;border:1px solid var(--line)}
-.worth-table th,.worth-table td{padding:12px 16px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
-.worth-table td:first-child{white-space:normal}
-.worth-table th:first-child,.worth-table td:first-child{text-align:left}
-.worth-table th{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);background:var(--tint-2)}
-.worth-table th:last-child,.worth-table td:last-child{color:var(--brand);font-weight:700}
-.worth-table tr.tot td{font-weight:800;color:var(--ink);border-top:2px solid var(--ink);border-bottom:0}
 /* Before / after */
 .ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 @media (max-width:860px){.ba{grid-template-columns:1fr}}
@@ -444,45 +431,29 @@ nav .wordmark:hover{color:var(--sun)}
       </div>
     </div>
 
-    <!-- Worth it -->
-    <div class="worth">
-      <div class="worth-text">
-        <div class="eyebrow">Is it worth $4,300?</div>
-        <h3>One product, repackaged, pays for the whole thing.</h3>
-        <p>Take the canoe. Say you rent 20 a week at $45. Package it with lunch and a guided hour at $189, put that first, and suppose 6 of those 20 guests take it. Same canoes, same staff. The difference over a 16-week summer is below.</p>
-        <p class="small">An illustration, not a customer result. Your numbers will be different; we work them out on the kickoff call.</p>
-      </div>
-      <table class="worth-table">
-        <thead><tr><th></th><th>Today</th><th>Repackaged</th></tr></thead>
-        <tbody>
-          <tr><td>Canoe rentals, per week</td><td>20 &times; $45</td><td>14 &times; $45</td></tr>
-          <tr><td>Day on the Lake packages</td><td>&mdash;</td><td>6 &times; $189</td></tr>
-          <tr><td>Revenue per week</td><td>$900</td><td>$1,764</td></tr>
-          <tr class="tot"><td>Extra revenue, 16-week summer</td><td></td><td><span class="hl" style="padding:0 8px">+$13,800</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-
     <!-- Before / after -->
     <div style="display:flex;flex-direction:column;gap:24px">
-      <h3 style="font-size:28px;font-weight:800;letter-spacing:-.02em">How things get done, before and after Sales Scout</h3>
-      <p class="body" style="max-width:680px">Same business, same four jobs. The left column is how most operators do them today. The right column is what you do once your Scout is installed.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;max-width:760px">
+        <div class="eyebrow">Your week, before and after</div>
+        <h3 style="font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-.025em;line-height:1.1">In 14 days, AI that knows your business as well as you do.</h3>
+        <p class="body">We spend two weeks teaching Sales Scout your prices, your brand and your voice. After that, the busywork stops landing on you, and your time goes back to the things only you can do.</p>
+      </div>
       <div class="ba">
         <div class="ba-card now">
-          <div class="ba-head"><span>Today</span><small>How most operators do it</small></div>
-          <div class="ba-row"><b>Change a price</b><span>Email your web person. Wait a week.</span></div>
-          <div class="ba-row"><b>Launch a new package</b><span>Copy an old page. Break the layout. Give up.</span></div>
-          <div class="ba-row"><b>Post on social</b><span>Stare at the phone. Post last year's photo.</span></div>
-          <div class="ba-row"><b>Sell a bigger booking</b><span>Guests book the cheapest option and never see the extras.</span></div>
-          <div class="ba-tot"><span>Time per week</span><span>A day, if you get to it</span></div>
+          <div class="ba-head"><span>Today</span><small>You do all of it</small></div>
+          <div class="ba-row"><b>Prices and dates</b><span>Log in, hunt for the page, hope nothing breaks.</span></div>
+          <div class="ba-row"><b>New packages</b><span>Wait on your web person, or don't bother.</span></div>
+          <div class="ba-row"><b>Social posts</b><span>Squeezed in at 11 pm, when you remember.</span></div>
+          <div class="ba-row"><b>Staying on-brand</b><span>Every page and post sounds a little different.</span></div>
+          <div class="ba-tot"><span>Your time goes to</span><span>The busywork</span></div>
         </div>
         <div class="ba-card then">
-          <div class="ba-head"><span>With your Scout</span><small>Once it's installed</small></div>
-          <div class="ba-row"><b>Change a price</b><span>Type one sentence. Live in a minute.</span></div>
-          <div class="ba-row"><b>Launch a new package</b><span>Describe it. Scout builds the page and links it to your calendar.</span></div>
-          <div class="ba-row"><b>Post on social</b><span>Drop in a photo. The post writes itself.</span></div>
-          <div class="ba-row"><b>Sell a bigger booking</b><span>Your best package is the first thing they see.</span></div>
-          <div class="ba-tot"><span>Time per week</span><span class="hl" style="padding:0 8px">About an hour</span></div>
+          <div class="ba-head"><span>With Sales Scout</span><small>It does the busywork</small></div>
+          <div class="ba-row"><b>Prices and dates</b><span>One sentence. It already knows your price list.</span></div>
+          <div class="ba-row"><b>New packages</b><span>Describe it. It builds the page in your style.</span></div>
+          <div class="ba-row"><b>Social posts</b><span>Drop in a photo. It writes the post in your voice.</span></div>
+          <div class="ba-row"><b>Staying on-brand</b><span>It knows your brand rules, so everything matches.</span></div>
+          <div class="ba-tot"><span>Your time goes to</span><span class="hl" style="padding:0 8px">Your guests and your next idea</span></div>
         </div>
       </div>
     </div>
