@@ -142,12 +142,29 @@ nav .wordmark:hover{color:var(--sun)}
 
 
 /* How it works */
-.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
-@media (max-width:860px){.how{grid-template-columns:1fr;gap:24px}}
-.how li{display:flex;flex-direction:column;gap:10px;min-width:0;border-top:3px solid var(--brand);padding-top:18px}
-.how .n{width:44px;height:44px;display:grid;place-items:center;background:var(--sun);color:var(--ink);font-weight:800;font-size:20px}
-.how h3{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
-.how p{font-size:17px;line-height:1.55;color:var(--ink-2)}
+.how-top{display:flex;flex-wrap:wrap;gap:40px 64px;align-items:center}
+.how-top>*{min-width:0}
+.how-copy{flex:1 1 440px;display:flex;flex-direction:column;gap:18px}
+.binder{flex:1 1 380px;max-width:480px;background:var(--tint);border:1px solid var(--line);border-left:10px solid var(--brand);padding:0 0 18px;box-shadow:0 10px 30px rgba(23,19,58,.08)}
+.binder-tab{background:var(--brand);color:#fff;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:12px 20px}
+.binder ul{display:flex;flex-direction:column}
+.binder li{display:flex;flex-direction:column;gap:3px;padding:14px 20px;border-bottom:1px dashed var(--line-2)}
+.binder .f{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:15px;font-weight:700;color:var(--brand)}
+.binder .d{font-size:15px;line-height:1.45;color:var(--ink-2)}
+.binder-foot{padding:14px 20px 0;font-size:13px;color:var(--mute)}
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line)}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.split-col{padding:28px 30px;display:flex;flex-direction:column;gap:16px;min-width:0;background:#fff}
+.split-col.you{background:var(--tint);border-left:1px solid var(--line)}
+@media (max-width:760px){.split-col.you{border-left:0;border-top:1px solid var(--line)}}
+.split-head{display:flex;align-items:center;gap:12px}
+.split-head img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:top;background:var(--tint);flex:0 0 44px}
+.you-dot{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--sun);color:var(--ink);font-size:13px;font-weight:800;flex:0 0 44px}
+.split-head h3{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.split ul{display:flex;flex-direction:column;gap:10px}
+.split li{position:relative;padding-left:22px;font-size:17px;line-height:1.45;color:var(--ink-2)}
+.split li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;background:var(--brand)}
+.split-col.you li::before{background:var(--sun-deep)}
 .who{font-size:17px;line-height:1.5;color:var(--ink-2);max-width:680px;border-left:4px solid var(--sun);padding-left:14px}
 .num{width:40px;height:40px;display:grid;place-items:center;background:var(--brand);color:#fff;font-weight:800;font-size:18px}
 .exhibits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start;padding:8px 0}
@@ -256,17 +273,47 @@ nav .wordmark:hover{color:var(--sun)}
 
 <!-- How it works -->
 <div id="how" style="background:var(--paper)">
-  <div class="wrap sec" style="display:flex;flex-direction:column;gap:40px">
-    <div style="display:flex;flex-direction:column;gap:16px;max-width:760px">
-      <div class="eyebrow">Meet your Sales Scout</div>
-      <h2 class="h2">How does it work?</h2>
-      <p class="lede">Bookahead is a done-for-you revenue system, powered by your own AI assistant. We do the work up front: the site, the packages, the season of content. Sales Scout is what keeps it running afterwards. It's an AI assistant built on top of Claude, installed on your computer with your business built around it. On its own, Claude is a clever stranger. With the setup, it knows your products, prices, brand and rules.</p>
+  <div class="wrap sec" style="display:flex;flex-direction:column;gap:56px">
+    <div class="how-top">
+      <div class="how-copy">
+        <div class="eyebrow">How it works</div>
+        <h2 class="h2">Claude is the new hire. Sales Scout is the training manual.</h2>
+        <p class="lede">On its own, an AI assistant is a clever stranger. It doesn't know your prices, your packages or how you talk to guests. Sales Scout is a set of files that teaches it. We write them in the 14 days, and they're yours to keep.</p>
+        <p class="body">Then you ask for what you need in plain English. "Raise the canoe rental to $65." "Write a post about the long weekend." It does the job the way you would, and shows you before anything goes live.</p>
+      </div>
+      <div class="binder" aria-label="What's inside your Sales Scout">
+        <div class="binder-tab">Sales Scout &middot; Your business</div>
+        <ul>
+          <li><span class="f">about-us.md</span><span class="d">Who you are, where you are, what makes a trip with you worth it.</span></li>
+          <li><span class="f">products-and-prices.md</span><span class="d">Every tour, room, rental and package. Dates, minimums, what's included.</span></li>
+          <li><span class="f">voice-and-brand.md</span><span class="d">How you sound, your colours and photos, the words you never use.</span></li>
+          <li><span class="f">house-rules.md</span><span class="d">What it can change on its own, what needs your okay, what it never touches.</span></li>
+          <li><span class="f">templates/</span><span class="d">Package pages, sold-out notices, social posts, season announcements.</span></li>
+        </ul>
+        <div class="binder-foot">Plain text files. Yours to keep, even if you leave.</div>
+      </div>
     </div>
-    <ol class="how">
-      <li><div class="n">1</div><h3>We set it up around your business.</h3><p>Your website, products, prices, brand and templates, built in so it can do useful work from day one.</p></li>
-      <li><div class="n">2</div><h3>You tell it what you want.</h3><p>Change a price, add a package, write a post. Plain English. No web developer, no ticket.</p></li>
-      <li><div class="n">3</div><h3>You approve. It publishes.</h3><p>It shows you the change first. Nothing goes live until you say yes.</p></li>
-    </ol>
+
+    <div class="split">
+      <div class="split-col">
+        <div class="split-head"><img src="img/scout-head.webp" alt=""><h3>The Scout does the busywork.</h3></div>
+        <ul>
+          <li>Updates prices, dates and sold-out notices</li>
+          <li>Builds new package pages</li>
+          <li>Writes the posts and captions</li>
+          <li>Keeps everything on-brand</li>
+        </ul>
+      </div>
+      <div class="split-col you">
+        <div class="split-head"><span class="you-dot" aria-hidden="true">You</span><h3>You do what only you can do.</h3></div>
+        <ul>
+          <li>Decide what's worth selling</li>
+          <li>Approve every change before it goes live</li>
+          <li>Take the photos that tell your story</li>
+          <li>Look after the guests</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
