@@ -130,7 +130,12 @@ nav .wordmark:hover{color:var(--sun)}
 .browser .top{display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--tint-2)}
 .browser .top i{width:9px;height:9px;border-radius:0;background:var(--line-2);display:inline-block}
 .browser img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block}
-.price-big{font-size:clamp(44px,5vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--brand)}
+.price-big{font-size:clamp(44px,5vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--brand);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price-big .once{font-size:15px;letter-spacing:.04em;text-transform:uppercase;background:var(--sun);color:var(--ink);padding:5px 9px;transform:translateY(-6px)}
+.no-sub{font-size:16px;color:var(--ink-2)}.no-sub b{color:var(--ink)}
+.call{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--on-brand);text-decoration:none;margin-top:2px;align-self:flex-start}
+.call img{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:0 0 34px;border:2px solid rgba(255,255,255,.6)}
+.call:hover{color:var(--sun)}.call:hover{text-decoration:underline;text-underline-offset:4px}
 .addr{font-size:19px;font-weight:700;color:var(--brand);text-decoration:underline;text-underline-offset:5px;user-select:all}
 .footer{border-top:1px solid var(--line);padding-block:28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--mute)}
 .footer a{color:var(--mute)}
@@ -354,6 +359,7 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
           <a href="#sprint" class="btn btn-sun">14 Days Guaranteed <span class="price">$4,300</span></a>
           <a href="#how" class="btn btn-ghost">Meet your Sales Scout</a>
         </div>
+        <a class="call" href="mailto:matthew@bookahead.ai?subject=15-minute%20call%20about%20Bookahead"><img src="img/matthew.webp" alt="">Book a 15-minute call with Matthew to learn more</a>
       </div>
 
       <!-- Sales Scout demo -->
@@ -364,7 +370,7 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
           <div class="chat-actions"><button type="button" id="demo-undo" style="font-weight:600;border:1px solid var(--line-2);background:#fff;color:var(--ink)">Undo</button><button type="button" id="demo-publish" style="font-weight:700;border:0;background:var(--ink);color:#fff">Publish</button></div>
         </div>
         <noscript><p style="margin-top:14px;font-size:15px;color:var(--on-brand-2)">"Add a long-weekend package. Two nights, big cabin, canoe included, $890." Scout builds the page; you press Publish.</p></noscript>
-        <p style="margin-top:14px;font-size:15px;color:var(--on-brand-2)">Say it, check it, publish it. No web developer needed. The demo above plays on its own; three real requests, in order.</p>
+        <p style="margin-top:14px;font-size:15px;color:var(--on-brand-2)">Say it, check it, publish it. No web developer needed.</p>
       </div>
     </div>
   </div>
@@ -490,8 +496,8 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
         <p class="who"><b>Who this is for:</b> independent operators selling bookable experiences, accommodation or rentals. Seasonal demand, a small team, and no marketing department.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start">
-        <div class="price-big">$4,300</div>
-        <div style="font-size:15px;color:var(--ink-3)">CAD. One price. Fixed scope.</div>
+        <div class="price-big">$4,300 <span class="once">one time</span></div>
+        <div class="no-sub"><b>No subscription.</b> Pay once, use it forever.</div>
       </div>
     </div>
 
@@ -619,6 +625,7 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
         <h3>Our guarantee: love the draft, or get your money back.</h3>
         <ul class="g-list">
           <li><b>See it before you commit.</b> On day 7 you see the real site and the new packages. Not for you? Say so, and you get a full refund.</li>
+          <li><b>Pay once, use it forever.</b> $4,300, one time. No subscription, no monthly fee to us.</li>
           <li><b>Everything is yours.</b> The site, the code and the Scout. Leave any time and take it all with you.</li>
         </ul>
         <a href="mailto:matthew@bookahead.ai?subject=Bookahead%2014%20Days%20Guaranteed" class="btn btn-sun" style="align-self:flex-start">Book your 14 days <span class="price">$4,300</span></a>
@@ -711,6 +718,7 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
         <a href="mailto:matthew@bookahead.ai?subject=Bookahead%2014%20Days%20Guaranteed" class="btn btn-sun">Book your 14 days <span class="price">$4,300</span></a>
         <a href="mailto:matthew@bookahead.ai?subject=Bookahead" class="btn btn-ghost">Ask a question first</a>
       </div>
+      <a class="call" href="mailto:matthew@bookahead.ai?subject=15-minute%20call%20about%20Bookahead"><img src="img/matthew.webp" alt="">Book a 15-minute call with Matthew to learn more</a>
     </div>
   </div>
 </div>
