@@ -151,19 +151,7 @@ nav .wordmark:hover{color:var(--sun)}
 .how-top{display:flex;flex-wrap:wrap;gap:40px 64px;align-items:center}
 .how-top>*{min-width:0}
 .how-copy{flex:1 1 380px;max-width:480px;display:flex;flex-direction:column;gap:18px}
-.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line)}
-@media (max-width:760px){.split{grid-template-columns:1fr}}
-.split-col{padding:28px 30px;display:flex;flex-direction:column;gap:16px;min-width:0;background:#fff}
-.split-col.you{background:var(--tint);border-left:1px solid var(--line)}
-@media (max-width:760px){.split-col.you{border-left:0;border-top:1px solid var(--line)}}
-.split-head{display:flex;align-items:center;gap:12px}
-.split-head img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:top;background:var(--tint);flex:0 0 44px}
-.you-dot{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--sun);color:var(--ink);font-size:13px;font-weight:800;flex:0 0 44px}
-.split-head h3{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
-.split ul{display:flex;flex-direction:column;gap:10px}
-.split li{position:relative;padding-left:22px;font-size:17px;line-height:1.45;color:var(--ink-2)}
 .split li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;background:var(--brand)}
-.split-col.you li::before{background:var(--sun-deep)}
 .who{font-size:17px;line-height:1.5;color:var(--ink-2);max-width:680px;border-left:4px solid var(--sun);padding-left:14px}
 .num{width:40px;height:40px;display:grid;place-items:center;background:var(--brand);color:#fff;font-weight:800;font-size:18px}
 .exhibits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start;padding:8px 0}
@@ -261,6 +249,28 @@ ul.t-inc{display:flex;flex-direction:column;gap:3px}
 ul.t-inc li::before{content:"+ ";font-weight:800}
 .tags-arrow{font-size:34px;font-weight:800;color:var(--brand)}
 @media (max-width:520px){.tags{flex-direction:column}.tags-arrow{transform:rotate(90deg)}}
+/* Meet your Scout extras */
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{color:#fff}
+.price-line{font-size:18px;color:var(--ink-2)}.price-line b{font-size:22px;color:var(--ink)}
+.ask{font-family:var(--hand);font-size:28px!important;font-weight:700;color:var(--brand)!important;line-height:1.15!important}
+.pkg{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.pkg-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:12px 14px;background:var(--sun)}
+.pkg-h b{font-size:16px}.pkg-h span{font-size:20px;font-weight:800}.pkg-h small{font-size:12px;font-weight:600}
+.pkg ul{padding:8px 14px}.pkg li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-size:14px;border-bottom:1px dashed var(--line)}
+.pkg li:last-child{border-bottom:0}.pkg em{font-style:normal;font-size:12px;color:var(--mute)}
+.pkg-f{padding:0 14px 12px;font-size:12px;color:var(--mute)}
+.thumbs{display:flex;gap:6px;margin-top:10px}.thumbs img{width:56px;height:56px;object-fit:cover;border-radius:4px;border:2px solid rgba(255,255,255,.7)}
+.plan{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:6px}
+.plan li{display:flex;gap:12px;padding:9px 12px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.4}
+.plan li:last-child{border-bottom:0}.plan .d{flex:0 0 72px;font-weight:800;font-size:12px;color:var(--brand);padding-top:2px}
+.queue{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:6px}
+.queue li{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line);font-size:14px}
+.queue li:last-child{border-bottom:0}.queue .q-name{flex:1;min-width:0}
+.q-tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:var(--sun);color:var(--ink);padding:3px 7px}
+.q-tag.live{background:#DDF3E6;color:#1B6B3E}
+.q-btn{font-size:12px;font-weight:700;background:var(--ink);color:#fff;padding:5px 10px;border-radius:4px}
+.q-btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line-2)}
+.queue li.done .q-name{color:var(--mute)}
 /* Timeline */
 .tl,.after-wrap{display:flex;flex-direction:column;gap:28px}
 .tl-head{display:flex;flex-direction:column;gap:10px}
@@ -357,15 +367,15 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
         <p style="font-size:clamp(19px,1.8vw,22px);font-weight:800;color:var(--sun)">More bookings. More revenue. A simpler system.</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:4px">
           <a href="#sprint" class="btn btn-sun">14 Days Guaranteed <span class="price">$4,300</span></a>
-          <a href="#how" class="btn btn-ghost">Meet your Sales Scout</a>
+          <a href="#meet" class="btn btn-ghost">Meet your Scout</a>
         </div>
         <a class="call" href="mailto:matthew@bookahead.ai?subject=15-minute%20call%20about%20Bookahead"><img src="img/matthew.webp" alt="">Book a 15-minute call with Matthew to learn more</a>
       </div>
 
-      <!-- Sales Scout demo -->
+      <!-- Scout demo -->
       <div style="flex:1 1 380px;max-width:520px">
         <div class="chat" id="demo">
-          <div class="bar"><img src="img/scout-head.webp" alt=""><span style="font-weight:600;color:var(--ink)">Your Sales Scout</span><span class="live"><i></i>Live demo</span><span style="margin-left:auto">yourbusiness.ca</span></div>
+          <div class="bar"><img src="img/scout-head.webp" alt=""><span style="font-weight:600;color:var(--ink)">Your Scout</span><span class="live"><i></i>Live demo</span><span style="margin-left:auto">yourbusiness.ca</span></div>
           <div class="msgs" id="demo-msgs" aria-live="polite"></div>
           <div class="chat-actions"><button type="button" id="demo-undo" style="font-weight:600;border:1px solid var(--line-2);background:#fff;color:var(--ink)">Undo</button><button type="button" id="demo-publish" style="font-weight:700;border:0;background:var(--ink);color:#fff">Publish</button></div>
         </div>
@@ -378,85 +388,106 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
 
 <!-- How it works -->
 <div id="how" style="background:var(--paper)">
-  <div class="wrap sec" style="display:flex;flex-direction:column;gap:56px">
+  <div class="wrap sec">
     <div class="how-top">
       <div class="how-copy">
-        <h2 class="h2">Claude is the new hire. Sales Scout is the training manual.</h2>
-        <p class="lede">On its own, an AI assistant is a clever stranger. It doesn't know your prices, your packages or how you talk to guests. Sales Scout is a set of files that teaches it. We write them in the 14 days, and they're yours to keep.</p>
-        <p class="body">Then you ask for what you need in plain English. "Raise the canoe rental to $65." "Write a post about the long weekend." It does the job the way you would, and shows you before anything goes live.</p>
+        <h2 class="h2">Let AI handle the busywork.</h2>
+        <p class="lede">An AI assistant that already knows your business.</p>
+        <p class="body">We set up the Scout System around your website, products, prices, brand and marketing, so AI can put them to work. Update pages, build packages and prepare your summer marketing by asking in plain English.</p>
+        <p class="body">All installed around your business in 14 days, ready for summer 2027.</p>
+        <p class="price-line"><b>$4,300.</b> One time. Yours to keep.</p>
+        <a href="#meet" class="btn btn-ink" style="align-self:flex-start">Meet your Scout</a>
       </div>
       <figure class="shot">
         <div class="app">
-          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Sales Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
+          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
           <div class="app-body"><aside class="app-side"><div class="app-side-h">Your business</div><ul><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>about-us.md</span></li><li class="on"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>products-and-prices.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>voice-and-brand.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>house-rules.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5h5l1.5 1.5h6.5v8.5h-13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>templates</span></li></ul></aside><div class="app-chat"><div class="a-me">What's in the Day on the Lake package, and what do we charge?</div><div class="a-sc"><img src="img/scout-head.webp" alt=""><div class="a-bub">Half-day canoe, a packed lunch and a guided hour with Sam. <b>$189 per person</b>, two-person minimum. On long weekends it needs a two-night stay.<div class="src"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>from products-and-prices.md</div></div></div></div></div>
         </div>
-        <div class="note note-left"><svg class="note-arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M50 46 C 30 44, 14 34, 10 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 15 L10 6 L17 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>your business, written down.<br>that's what we build.</span></div>
+        <div class="note note-left"><svg class="note-arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M50 46 C 30 44, 14 34, 10 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 15 L10 6 L17 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>it already knows your business.</span></div>
       </figure>
-    </div>
-
-    <div class="split">
-      <div class="split-col">
-        <div class="split-head"><img src="img/scout-head.webp" alt=""><h3>The Scout does the busywork.</h3></div>
-        <ul>
-          <li>Updates prices, dates and sold-out notices</li>
-          <li>Builds new package pages</li>
-          <li>Writes the posts and captions</li>
-          <li>Keeps everything on-brand</li>
-        </ul>
-      </div>
-      <div class="split-col you">
-        <div class="split-head"><span class="you-dot" aria-hidden="true">You</span><h3>You do what only you can do.</h3></div>
-        <ul>
-          <li>Decide what's worth selling</li>
-          <li>Approve every change before it goes live</li>
-          <li>Take the photos that tell your story</li>
-          <li>Look after the guests</li>
-        </ul>
-      </div>
     </div>
   </div>
 </div>
 
-<!-- Here's how it looks -->
-<div id="looks" style="background:var(--paper)">
+<!-- Meet your Scout -->
+<div id="meet" style="background:var(--paper)">
   <div class="wrap sec" style="display:flex;flex-direction:column;gap:72px;padding-top:0">
     <div class="looks-head">
-      <h2 class="h2">Here's how it looks, day to day.</h2>
-      <p class="lede">You type. It does the job. You check it and press Publish.</p>
+      <h2 class="h2">Meet your Scout.</h2>
+      <p class="lede">Your business has a new assistant. It already knows your products, prices, brand and website.</p>
     </div>
     <div class="shot-row">
       <div class="shot-copy">
-        <h3>Change anything by asking.</h3>
-        <p>New price, new dates, sold out, back in stock. One sentence, and Sales Scout updates your price list and your website together, so the two never disagree.</p>
+        <h3>Update your website</h3>
+        <p class="ask">&ldquo;Add our new sunset paddle for $85 per person.&rdquo;</p>
+        <p>Scout builds the page using your existing website style and product information. You review it and publish.</p>
       </div>
       <figure class="shot">
         <div class="app">
-          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Sales Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
-          <div class="app-body"><aside class="app-side"><div class="app-side-h">Your business</div><ul><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>about-us.md</span></li><li class="on"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>products-and-prices.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>voice-and-brand.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>house-rules.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5h5l1.5 1.5h6.5v8.5h-13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>templates</span></li></ul></aside><div class="app-chat"><div class="a-me">Raise the canoe rental to $65 from June 1.</div><div class="a-sc"><img src="img/scout-head.webp" alt=""><div class="a-bub">Here's what I'll change:
-    <div class="chg">
-      <div class="chg-row"><span class="chg-where"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>products-and-prices.md</span><span class="chg-what">Canoe rental, half day <s>$55</s> <b>$65</b> from June 1</span></div>
-      <div class="chg-row"><span class="chg-where"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M1.8 8h12.4M8 1.7c2 2 2 10.6 0 12.6M8 1.7c-2 2-2 10.6 0 12.6" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>yourbusiness.ca/rentals</span><span class="chg-what">Price updated. Trips already booked keep $55.</span></div>
-    </div>
-    <div class="a-btns"><span class="b-ghost">Undo</span><span class="b-pub">Publish</span></div></div></div></div></div>
+          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
+          <div class="app-body"><aside class="app-side"><div class="app-side-h">Your business</div><ul><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>about-us.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>products-and-prices.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>voice-and-brand.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>house-rules.md</span></li><li class="on"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5h5l1.5 1.5h6.5v8.5h-13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>templates</span></li></ul></aside><div class="app-chat"><div class="a-me">Add our new sunset paddle for $85 per person.</div><div class="a-sc"><img src="img/scout-head.webp" alt=""><div class="a-bub">Draft's ready. I used your trip page layout and the details from your price list.
+    <div class="prev">
+      <div class="prev-img"><img src="img/post-1.webp" alt=""><span class="draft">Draft &middot; not live yet</span></div>
+      <div class="prev-t"><b>Sunset Paddle</b><span>$85</span></div>
+      <div class="prev-s">Two hours on the water at golden hour. Canoe, PFD and guide included. Fridays and Saturdays, July and August.</div>
+    </div><div class="a-btns"><span class="b-ghost">Ask for changes</span><span class="b-pub">Publish</span></div></div></div></div></div>
         </div>
-        <div class="note note-right"><svg class="note-arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M50 46 C 30 44, 14 34, 10 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 15 L10 6 L17 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>one sentence. price list and<br>website, both updated.</span></div>
+        <div class="note note-right"><svg class="note-arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M50 46 C 30 44, 14 34, 10 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 15 L10 6 L17 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>your layout, your details.</span></div>
       </figure>
     </div>
     <div class="shot-row flip">
       <div class="shot-copy">
-        <h3>Nothing goes live until you say yes.</h3>
-        <p>Every new page, price and post shows up as a draft first. Ask for changes in plain English, or press Publish. You're always the last click.</p>
+        <h3>Create packages people want to book</h3>
+        <p class="ask">&ldquo;Turn our canoe rental into a full-day experience with lunch.&rdquo;</p>
+        <p>Scout helps build the offer, assemble the details and create a page ready to review.</p>
       </div>
       <figure class="shot">
         <div class="app">
-          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Sales Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
-          <div class="app-body"><aside class="app-side"><div class="app-side-h">Your business</div><ul><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>about-us.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>products-and-prices.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>voice-and-brand.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>house-rules.md</span></li><li class="on"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5h5l1.5 1.5h6.5v8.5h-13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>templates</span></li></ul></aside><div class="app-chat"><div class="a-me">Add a fall colours weekend, set up like the Sunset Paddle.</div><div class="a-sc"><img src="img/scout-head.webp" alt=""><div class="a-bub">Draft's ready. I copied the Sunset Paddle layout, used your fall photos, and took the price from your list.
-    <div class="prev">
-      <div class="prev-img"><img src="img/post-2.webp" alt=""><span class="draft">Draft &middot; not live yet</span></div>
-      <div class="prev-t"><b>Fall Colours Weekend</b><span>$240</span></div>
-      <div class="prev-s">Two nights, guided paddle, peak colour. Thanksgiving and the weekend after.</div>
+          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
+          <div class="app-body"><aside class="app-side"><div class="app-side-h">Your business</div><ul><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>about-us.md</span></li><li class="on"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>products-and-prices.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>voice-and-brand.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>house-rules.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5h5l1.5 1.5h6.5v8.5h-13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>templates</span></li></ul></aside><div class="app-chat"><div class="a-me">Turn our canoe rental into a full-day experience with lunch.</div><div class="a-sc"><img src="img/scout-head.webp" alt=""><div class="a-bub">Here's a package built from what you already sell:
+    <div class="pkg">
+      <div class="pkg-h"><b>Day on the Lake</b><span>$189 <small>per person</small></span></div>
+      <ul><li>Canoe, all day <em>from rentals</em></li><li>Packed lunch <em>from the caf&eacute; menu</em></li><li>A guided hour with Sam <em>from tours</em></li></ul>
+      <div class="pkg-f">Was $45 as a rental. Suggested price based on your costs.</div>
+    </div><div class="a-btns"><span class="b-ghost">Change the price</span><span class="b-pub">Build the page</span></div></div></div></div></div>
+        </div>
+        <div class="note note-left"><svg class="note-arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M50 46 C 30 44, 14 34, 10 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 15 L10 6 L17 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>built from what you already sell.</span></div>
+      </figure>
     </div>
-    <div class="a-btns"><span class="b-ghost">Ask for changes</span><span class="b-pub">Publish</span></div></div></div></div></div>
+    <div class="shot-row">
+      <div class="shot-copy">
+        <h3>Get your marketing done</h3>
+        <p class="ask">&ldquo;Prepare next month's social posts using these photos.&rdquo;</p>
+        <p>Scout drafts on-brand content using your templates, products and business voice.</p>
+      </div>
+      <figure class="shot">
+        <div class="app">
+          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
+          <div class="app-body"><aside class="app-side"><div class="app-side-h">Your business</div><ul><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>about-us.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>products-and-prices.md</span></li><li class="on"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>voice-and-brand.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>house-rules.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5h5l1.5 1.5h6.5v8.5h-13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>templates</span></li></ul></aside><div class="app-chat"><div class="a-me">Prepare next month's social posts using these photos.<div class="thumbs"><img src="img/post-1.webp" alt=""><img src="img/post-2.webp" alt=""><img src="img/post-3.webp" alt=""></div></div><div class="a-sc"><img src="img/scout-head.webp" alt=""><div class="a-bub">Twelve posts for July, in your templates and your voice. Here are the first three:
+    <ul class="plan">
+      <li><span class="d">Sat Jul 4</span><span>The lake at 7am, before anyone else is up. Canoes go out at 9.</span></li>
+      <li><span class="d">Wed Jul 8</span><span>Three cabins left for the long weekend. That's it until September.</span></li>
+      <li><span class="d">Sun Jul 12</span><span>Best seat in the park. Stargazing nights still open this week.</span></li>
+    </ul><div class="a-btns"><span class="b-ghost">See all 12</span><span class="b-pub">Schedule</span></div></div></div></div></div>
+        </div>
+        <div class="note note-right"><svg class="note-arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M50 46 C 30 44, 14 34, 10 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 15 L10 6 L17 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>a month of posts, in your voice.</span></div>
+      </figure>
+    </div>
+    <div class="shot-row flip">
+      <div class="shot-copy">
+        <h3>Stay in control</h3>
+        <p>Scout prepares the work. You check it, make changes and approve what goes live.</p>
+      </div>
+      <figure class="shot">
+        <div class="app">
+          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
+          <div class="app-body"><aside class="app-side"><div class="app-side-h">Your business</div><ul><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>about-us.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>products-and-prices.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>voice-and-brand.md</span></li><li class="on"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>house-rules.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5h5l1.5 1.5h6.5v8.5h-13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>templates</span></li></ul></aside><div class="app-chat"><div class="a-me">What's waiting for me?</div><div class="a-sc"><img src="img/scout-head.webp" alt=""><div class="a-bub">Three things are ready for you to check. Nothing goes live until you approve it.
+    <ul class="queue">
+      <li><span class="q-name">Sunset Paddle page</span><span class="q-tag">Draft</span><span class="q-btn">Approve</span></li>
+      <li><span class="q-name">Day on the Lake package</span><span class="q-tag">Draft</span><span class="q-btn">Approve</span></li>
+      <li><span class="q-name">12 July posts</span><span class="q-tag">Draft</span><span class="q-btn">Approve</span></li>
+      <li class="done"><span class="q-name">Canoe rental to $65</span><span class="q-tag live">Live</span><span class="q-btn ghost">Undo</span></li>
+    </ul></div></div></div></div>
         </div>
         <div class="note note-left"><svg class="note-arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M50 46 C 30 44, 14 34, 10 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 15 L10 6 L17 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>you're always the last click.</span></div>
       </figure>
@@ -477,7 +508,7 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
       <p>The software industry's answer has been more software. Another login. Another monthly fee. Another dashboard nobody opens after March.</p>
       <p class="big">You don't need more software. You need a <span class="hl">system</span> that does the work.</p>
       <p>So I built one for Parkbus. A site I change by typing a sentence. Packages built to sell. A season of posts made before the season starts. <span class="hl">It saves me at least 10 hours a week.</span></p>
-      <p>That's Sales Scout. Now I'd like to set it up for you.</p>
+      <p>That's the system I'll set up for you.</p>
       <div class="sign">
         <div class="sig-who"><img src="img/matthew.webp" alt="Matthew Thomas"><div><b>Matthew Thomas</b><span>Founder, Bookahead &amp; Parkbus</span></div></div>
       </div>
@@ -504,12 +535,12 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
     <div class="parts">
       <div class="part">
         <div class="part-text">
-          <h3>Your Sales Scout, set up around your business</h3>
+          <h3>Your Scout, set up around your business</h3>
           <p>Your website, products, prices, brand and templates, all set up so your AI assistant can do useful work from day one. Change a price, add a weekend package or update a page by typing a sentence. Your Scout makes the change, shows you the result, and publishes when you approve it.</p>
         </div>
         <div class="part-fig">
           <div class="app setup-app">
-            <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Setting up Sales Scout &middot; Pine Lake Outfitters</span></div>
+            <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Setting up Scout &middot; Pine Lake Outfitters</span></div>
             <ul class="setup-list"><li><span class="ck" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 8.5l2.6 2.6L12 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>about-us.md</span><span class="when">Day 2</span></li><li><span class="ck" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 8.5l2.6 2.6L12 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>products-and-prices.md</span><span class="when">Day 4</span></li><li><span class="ck" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 8.5l2.6 2.6L12 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>voice-and-brand.md</span><span class="when">Day 5</span></li><li><span class="ck" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 8.5l2.6 2.6L12 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>house-rules.md</span><span class="when">Day 6</span></li><li><span class="ck" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 8.5l2.6 2.6L12 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>templates</span><span class="when">Day 10</span></li></ul>
             <div class="setup-foot"><div class="bar"><i></i></div><span><b>Ready.</b> Installed on your computer, day 14.</span></div>
           </div>
@@ -560,7 +591,7 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
     <div style="display:flex;flex-direction:column;gap:24px">
       <div style="display:flex;flex-direction:column;gap:14px;max-width:760px">
         <h3 style="font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-.025em;line-height:1.1">In 14 days, AI that knows your business as well as you do.</h3>
-        <p class="body">We spend two weeks teaching Sales Scout your prices, your brand and your voice. After that, the busywork stops landing on you, and your time goes back to the things only you can do.</p>
+        <p class="body">We spend two weeks teaching Scout your prices, your brand and your voice. After that, the busywork stops landing on you, and your time goes back to the things only you can do.</p>
       </div>
       <div class="ba">
         <div class="ba-card now">
@@ -572,7 +603,7 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
           <div class="ba-tot"><span>Your time goes to</span><span>The busywork</span></div>
         </div>
         <div class="ba-card then">
-          <div class="ba-head"><span>With Sales Scout</span><small>It does the busywork</small></div>
+          <div class="ba-head"><span>With Scout</span><small>It does the busywork</small></div>
           <div class="ba-row"><b>Prices and dates</b><span>One sentence. It already knows your price list.</span></div>
           <div class="ba-row"><b>New packages</b><span>Describe it. It builds the page in your style.</span></div>
           <div class="ba-row"><b>Social posts</b><span>Drop in a photo. It writes the post in your voice.</span></div>
@@ -663,7 +694,7 @@ ul.t-inc li::before{content:"+ ";font-weight:800}
         <span style="font-size:14px;color:var(--on-brand-2)">Built for partnership and industry-development budgets.</span>
       </div>
     </div>
-    <img src="img/cohort.webp" alt="The Sales Scout leading a group of operators along a lakeside trail" style="flex:1 1 380px;max-width:560px;width:100%;height:auto;display:block">
+    <img src="img/cohort.webp" alt="Scout leading a group of operators along a lakeside trail" style="flex:1 1 380px;max-width:560px;width:100%;height:auto;display:block">
   </div>
 </div>
 
