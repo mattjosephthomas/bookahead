@@ -6,13 +6,14 @@
 <meta name="description" content="Bookahead: a done-for-you revenue system for independent tourism operators, powered by your own AI assistant. 14 days, guaranteed.">
 <title>Bookahead</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Caveat:wght@600;700&display=swap">
 <style>
 /* Layout: full-width colour bands, 1160px inner column, two-column rows that stack at phone width. Single committed light look (brand page). */
 :root{
   --brand:#2A1E78; --brand-deep:#170F4F; --ink:#17133A; --ink-2:#2B2652; --ink-3:#4A4570; --mute:#6A6590;
   --paper:#ffffff; --tint:#F3F1FC; --tint-2:#F7F6FC; --line:#E1DDF3; --line-2:#D6D1EE; --on-brand:#E3DEFF; --on-brand-2:#CFC8F5;
   --sun:#FFD36B; --sun-deep:#E6B53E; --note:#FFF9E6; --note-line:#F0E3B8; --khaki:#A8803A; --khaki-deep:#8E6A2E; --skin:#FFE3C4; --cheek:#F6A5A0;
+  --hand:Caveat,'Segoe Print','Bradley Hand',cursive;
   --font:Figtree,"Helvetica Neue",Arial,system-ui,sans-serif;
   color-scheme:light;
 }
@@ -144,14 +145,7 @@ nav .wordmark:hover{color:var(--sun)}
 /* How it works */
 .how-top{display:flex;flex-wrap:wrap;gap:40px 64px;align-items:center}
 .how-top>*{min-width:0}
-.how-copy{flex:1 1 440px;display:flex;flex-direction:column;gap:18px}
-.binder{flex:1 1 380px;max-width:480px;background:var(--tint);border:1px solid var(--line);border-left:10px solid var(--brand);padding:0 0 18px;box-shadow:0 10px 30px rgba(23,19,58,.08)}
-.binder-tab{background:var(--brand);color:#fff;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:12px 20px}
-.binder ul{display:flex;flex-direction:column}
-.binder li{display:flex;flex-direction:column;gap:3px;padding:14px 20px;border-bottom:1px dashed var(--line-2)}
-.binder .f{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:15px;font-weight:700;color:var(--brand)}
-.binder .d{font-size:15px;line-height:1.45;color:var(--ink-2)}
-.binder-foot{padding:14px 20px 0;font-size:13px;color:var(--mute)}
+.how-copy{flex:1 1 380px;max-width:480px;display:flex;flex-direction:column;gap:18px}
 .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line)}
 @media (max-width:760px){.split{grid-template-columns:1fr}}
 .split-col{padding:28px 30px;display:flex;flex-direction:column;gap:16px;min-width:0;background:#fff}
@@ -171,15 +165,72 @@ nav .wordmark:hover{color:var(--sun)}
 @media (max-width:860px){.exhibits{grid-template-columns:1fr}}
 .exhibits>a{display:block;text-decoration:none;color:var(--ink)}
 /* Letter */
-.letter{width:100%;max-width:900px;margin:0 auto;min-width:0;background:#fff;padding:48px 56px 44px;display:flex;flex-direction:column;gap:22px;box-shadow:0 1px 2px rgba(23,19,58,.06);position:relative}
-.letterhead{width:min(300px,70%);height:auto;align-self:center;margin-bottom:8px}
-@media (max-width:600px){.letter{padding:28px 22px}}
-.letter-body{display:flex;flex-direction:column;gap:16px;font-size:18px;line-height:1.65;color:var(--ink-2)}
 .ul{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:6px;text-underline-offset:4px}
-.sig{display:flex;align-items:center;gap:14px;padding-top:8px}
-.sig img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:0 0 52px}
-.sig b{display:block;font-size:17px;font-weight:800}
-.sig span{display:block;font-size:14px;color:var(--mute)}
+/* App screenshots */
+.shot{margin:0;flex:1 1 520px;min-width:0;display:flex;flex-direction:column}
+.app{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(23,19,58,.12),0 2px 6px rgba(23,19,58,.06)}
+.app-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:var(--tint-2);border-bottom:1px solid var(--line);font-size:13px}
+.app-title{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);min-width:0}
+.app-title img{width:22px;height:22px;border-radius:50%;object-fit:cover;object-position:top;background:var(--tint)}
+.app-on{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--mute);border:1px solid var(--line-2);padding:3px 8px;border-radius:20px;white-space:nowrap}
+.app-body{display:grid;grid-template-columns:200px 1fr;min-height:250px}
+.app-side{background:var(--tint-2);border-right:1px solid var(--line);padding:14px 10px}
+.app-side-h{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);padding:0 8px 8px}
+.app-side li{display:flex;align-items:center;gap:6px;padding:7px 8px;font-size:11.5px;white-space:nowrap;overflow:hidden;color:var(--ink-3);border-radius:5px;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+.app-side li.on{background:var(--sun);color:var(--ink);font-weight:700}
+.doc{width:14px;height:14px;flex:0 0 14px}
+.app-chat{padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.a-me{align-self:flex-end;max-width:85%;background:var(--brand);color:#fff;padding:11px 15px;border-radius:12px 12px 2px 12px;font-size:15px;line-height:1.45}
+.a-sc{display:flex;gap:10px;align-items:flex-start;max-width:96%}
+.a-sc>img{width:30px;height:30px;flex:0 0 30px;border-radius:50%;object-fit:cover;object-position:top;background:var(--tint)}
+.a-bub{background:var(--tint);padding:13px 15px;border-radius:12px 12px 12px 2px;font-size:15px;line-height:1.5;color:var(--ink);min-width:0}
+.src{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;color:var(--mute);font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;background:#fff;border:1px solid var(--line);padding:4px 8px;border-radius:4px}
+.chg{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:6px}
+.chg-row{display:flex;flex-direction:column;gap:3px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.chg-row:last-child{border-bottom:0}
+.chg-where{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--mute);font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+.chg-what{font-size:14px}.chg-what s{color:var(--mute)}.chg-what b{color:var(--brand)}
+.a-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+.a-btns span{font-size:13px;font-weight:700;padding:7px 12px;border-radius:4px}
+.b-ghost{border:1px solid var(--line-2);background:#fff;color:var(--ink)}
+.b-pub{background:var(--ink);color:#fff;box-shadow:0 0 0 4px rgba(255,211,107,.8)}
+.prev{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.prev-img{position:relative;aspect-ratio:16/7;background:var(--ink)}
+.prev-img img{width:100%;height:100%;object-fit:cover;display:block}
+.draft{position:absolute;top:8px;left:8px;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:var(--sun);color:var(--ink);padding:4px 8px}
+.prev-t{display:flex;justify-content:space-between;gap:10px;padding:10px 12px 2px;font-size:15px}.prev-t span{font-weight:800;color:var(--brand)}
+.prev-s{padding:0 12px 12px;font-size:13px;color:var(--mute);line-height:1.4}
+@media (max-width:640px){.app-body{grid-template-columns:1fr}.app-side{border-right:0;border-bottom:1px solid var(--line);padding:10px}.app-side ul{display:flex;flex-wrap:wrap;gap:4px}.app-side li{padding:4px 7px;font-size:12px}.app-side-h{padding:0 4px 6px}.app-on{display:none}}
+/* Hand-drawn notes */
+.note{display:flex;align-items:flex-start;gap:6px;margin-top:6px;color:var(--brand);font-family:var(--hand);font-size:27px;font-weight:700;line-height:1.05}
+.note span{padding-top:26px;transform:rotate(-2deg)}
+.note-arrow{width:56px;height:46px;flex:0 0 56px}
+.note-left{padding-left:28px}
+.note-right{justify-content:flex-end;padding-right:12px}
+.note-right .note-arrow{order:2;transform:scaleX(-1)}
+.hand-label{font-family:var(--hand);font-size:24px;font-weight:700;color:var(--brand);line-height:1.1;transform:rotate(-2deg);transform-origin:left}
+/* Here's how it looks */
+.looks-head{display:flex;flex-direction:column;gap:14px;padding-top:72px;border-top:1px solid var(--line-2)}
+.looks-head .lede{max-width:760px}
+.shot-row{display:flex;flex-wrap:wrap;gap:32px 64px;align-items:center}
+.shot-row>*{min-width:0}
+.shot-copy{flex:1 1 320px;max-width:420px;display:flex;flex-direction:column;gap:14px}
+.shot-copy h3{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.025em;line-height:1.1}
+.shot-copy p{font-size:18px;line-height:1.55;color:var(--ink-2)}
+.shot-row.flip .shot-copy{order:2}
+@media (max-width:900px){.shot-row.flip .shot-copy{order:0}.shot-copy{max-width:none}}
+/* Letter (HEY style) */
+.letter{max-width:680px;margin:0 auto;background:#fff;padding:56px 60px 48px;display:flex;flex-direction:column;gap:18px;font-size:19px;line-height:1.6;color:var(--ink-2);box-shadow:0 1px 2px rgba(23,19,58,.06),0 20px 50px rgba(23,19,58,.08);border-top:6px solid var(--sun)}
+@media (max-width:600px){.letter{padding:32px 22px 28px;font-size:17px}}
+.letter .hey{font-size:clamp(30px,4vw,42px);font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.letter .big{font-size:clamp(22px,2.6vw,27px);font-weight:800;letter-spacing:-.02em;line-height:1.3;color:var(--ink);padding:8px 0}
+.ul{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:6px;text-underline-offset:4px}
+.sign{display:flex;flex-direction:column;gap:10px;padding-top:14px}
+.sig-hand{font-family:var(--hand);font-size:52px;font-weight:700;color:var(--brand);line-height:1;transform:rotate(-4deg);transform-origin:left}
+.sig-who{display:flex;align-items:center;gap:12px}
+.sig-who img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex:0 0 48px}
+.sig-who b{display:block;font-size:16px;font-weight:800;color:var(--ink)}
+.sig-who span{display:block;font-size:14px;color:var(--mute)}
 /* Timeline */
 .tl,.after-wrap{display:flex;flex-direction:column;gap:28px}
 .tl-head{display:flex;flex-direction:column;gap:10px}
@@ -299,22 +350,17 @@ nav .wordmark:hover{color:var(--sun)}
   <div class="wrap sec" style="display:flex;flex-direction:column;gap:56px">
     <div class="how-top">
       <div class="how-copy">
-        <div class="eyebrow">How it works</div>
         <h2 class="h2">Claude is the new hire. Sales Scout is the training manual.</h2>
         <p class="lede">On its own, an AI assistant is a clever stranger. It doesn't know your prices, your packages or how you talk to guests. Sales Scout is a set of files that teaches it. We write them in the 14 days, and they're yours to keep.</p>
         <p class="body">Then you ask for what you need in plain English. "Raise the canoe rental to $65." "Write a post about the long weekend." It does the job the way you would, and shows you before anything goes live.</p>
       </div>
-      <div class="binder" aria-label="What's inside your Sales Scout">
-        <div class="binder-tab">Sales Scout &middot; Your business</div>
-        <ul>
-          <li><span class="f">about-us.md</span><span class="d">Who you are, where you are, what makes a trip with you worth it.</span></li>
-          <li><span class="f">products-and-prices.md</span><span class="d">Every tour, room, rental and package. Dates, minimums, what's included.</span></li>
-          <li><span class="f">voice-and-brand.md</span><span class="d">How you sound, your colours and photos, the words you never use.</span></li>
-          <li><span class="f">house-rules.md</span><span class="d">What it can change on its own, what needs your okay, what it never touches.</span></li>
-          <li><span class="f">templates/</span><span class="d">Package pages, sold-out notices, social posts, season announcements.</span></li>
-        </ul>
-        <div class="binder-foot">Plain text files. Yours to keep, even if you leave.</div>
-      </div>
+      <figure class="shot">
+        <div class="app">
+          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Sales Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
+          <div class="app-body"><aside class="app-side"><div class="app-side-h">Your business</div><ul><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>about-us.md</span></li><li class="on"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>products-and-prices.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>voice-and-brand.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>house-rules.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5h5l1.5 1.5h6.5v8.5h-13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>templates</span></li></ul></aside><div class="app-chat"><div class="a-me">What's in the Day on the Lake package, and what do we charge?</div><div class="a-sc"><img src="img/scout-head.webp" alt=""><div class="a-bub">Half-day canoe, a packed lunch and a guided hour with Sam. <b>$189 per person</b>, two-person minimum. On long weekends it needs a two-night stay.<div class="src"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>from products-and-prices.md</div></div></div></div></div>
+        </div>
+        <div class="note note-left"><svg class="note-arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M50 46 C 30 44, 14 34, 10 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 15 L10 6 L17 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>your business, written down.<br>that's what we build.</span></div>
+      </figure>
     </div>
 
     <div class="split">
@@ -340,58 +386,72 @@ nav .wordmark:hover{color:var(--sun)}
   </div>
 </div>
 
-<!-- Meet your Sales Scout -->
-<div id="note" class="band-tint">
-  <div class="wrap sec" style="display:flex;flex-direction:column;gap:56px">
-    <div class="letter">
-      <img class="letterhead" src="img/scout-hero.webp" alt="The Sales Scout looking out over a lake with binoculars">
-      <div class="eyebrow">A note from Matthew</div>
-      <h2 class="h2">I built this to run my own tourism company. Now it's yours.</h2>
-      <div class="letter-body">
-        <p style="font-size:22px;font-weight:700;color:var(--ink);line-height:1.35">You don't need more software. You need a <u class="ul">system</u> that does the work.</p>
-        <p>Here's the problem. Every tourism operator I know has a website they're a little embarrassed by, a list of packages that hasn't changed since 2019, and a social feed that goes quiet the moment the season gets busy. Not because they don't care. Because July is July.</p>
-        <p>The software industry's answer has been more software. Another login, another monthly fee, another dashboard nobody opens after March.</p>
-        <p>I don't think you need more software. I think you need a system that does the work: one that knows your business, makes the change when you ask, and then gets out of the way.</p>
-        <p>That's what Sales Scout is: your site, your products, your prices, your brand and your rules, built around an assistant that does the work when you ask.</p>
-        <p>I built it because I needed it. Parkbus runs trips from Toronto and Vancouver to Canada's parks. Two people run the business coast to coast, and revenue has grown about 30% a year for two years. The system is the difference: a site I change by typing a sentence, packages built to sell, and a season of content made before the season starts. <span class="hl">It saves me at least 10 hours a week.</span></p>
-        <p>Now I'm setting up the same approach for other tourism businesses, and I'd like to set it up for you.</p>
-      </div>
-      <div class="exhibits">
-        <div class="chart" style="max-width:460px;margin-top:8px">
-        <svg viewBox="0 0 460 210" role="img" aria-label="Parkbus revenue indexed to 2024: 100, 130, 169">
-          <line x1="40" y1="170" x2="440" y2="170" stroke="#D6D1EE" stroke-width="1.5"/>
-          <rect x="70" y="106" width="90" height="64" rx="6" fill="#CFC8F5"/>
-          <rect x="185" y="87" width="90" height="83" rx="6" fill="#2A1E78"/>
-          <rect x="300" y="62" width="90" height="108" rx="6" fill="#FFD36B"/>
-          <text x="115" y="96" text-anchor="middle" font-size="18" font-weight="800" fill="#4A4570">100</text>
-          <text x="230" y="77" text-anchor="middle" font-size="18" font-weight="800" fill="#2A1E78">130</text>
-          <text x="345" y="52" text-anchor="middle" font-size="18" font-weight="800" fill="#17133A">169</text>
-          <text x="115" y="194" text-anchor="middle" font-size="15" fill="#6A6590">2024</text>
-          <text x="230" y="194" text-anchor="middle" font-size="15" fill="#6A6590">2025</text>
-          <text x="345" y="194" text-anchor="middle" font-size="15" fill="#6A6590">2026</text>
-          <path d="M115 100 Q230 40 345 56" fill="none" stroke="#17133A" stroke-width="2" stroke-dasharray="4 5" opacity=".5"/>
-        </svg>
-        <div class="cap">Parkbus revenue, indexed to 2024. About 30% growth a year, two years running, with the same two people.</div>
-      </div>
-      <a href="https://parkbus.ca" style="display:block;text-decoration:none;color:var(--ink)">
-        <div class="browser">
-          <div class="top"><span style="margin-left:8px;font-size:13px;font-weight:600;color:var(--ink-3)">parkbus.ca</span><span style="margin-left:auto;font-size:13px;color:var(--mute)">Rebuilt fall 2026</span></div>
-          <img src="img/parkbus.webp" alt="The parkbus.ca homepage">
-        </div>
-      </a>
-      <a href="https://www.visitcanadaparks.ca" style="display:block;text-decoration:none;color:var(--ink)">
-        <div class="browser">
-          <div class="top"><span style="margin-left:8px;font-size:13px;font-weight:600;color:var(--ink-3)">visitcanadaparks.ca</span><span style="margin-left:auto;font-size:13px;color:var(--mute)">Launched October 2026</span></div>
-          <img src="img/visitcanadaparks.webp" alt="The visitcanadaparks.ca homepage">
-        </div>
-      </a>
-      </div>
-      <p class="small" style="line-height:1.5">300,000+ riders since 2010. 4.6 on Google. Featured in National Geographic, CBC and The Globe and Mail.</p>
-      <div class="sig">
-        <img src="img/matthew.webp" alt="Matthew Thomas">
-        <div><b>Matthew Thomas</b><span>Founder, Parkbus and Bookahead</span></div>
-      </div>
+<!-- Here's how it looks -->
+<div id="looks" style="background:var(--paper)">
+  <div class="wrap sec" style="display:flex;flex-direction:column;gap:72px;padding-top:0">
+    <div class="looks-head">
+      <h2 class="h2">Here's how it looks, day to day.</h2>
+      <p class="lede">You type. It does the job. You check it and press Publish.</p>
     </div>
+    <div class="shot-row">
+      <div class="shot-copy">
+        <h3>Change anything by asking.</h3>
+        <p>New price, new dates, sold out, back in stock. One sentence, and Sales Scout updates your price list and your website together, so the two never disagree.</p>
+      </div>
+      <figure class="shot">
+        <div class="app">
+          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Sales Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
+          <div class="app-body"><aside class="app-side"><div class="app-side-h">Your business</div><ul><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>about-us.md</span></li><li class="on"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>products-and-prices.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>voice-and-brand.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>house-rules.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5h5l1.5 1.5h6.5v8.5h-13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>templates</span></li></ul></aside><div class="app-chat"><div class="a-me">Raise the canoe rental to $65 from June 1.</div><div class="a-sc"><img src="img/scout-head.webp" alt=""><div class="a-bub">Here's what I'll change:
+    <div class="chg">
+      <div class="chg-row"><span class="chg-where"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>products-and-prices.md</span><span class="chg-what">Canoe rental, half day <s>$55</s> <b>$65</b> from June 1</span></div>
+      <div class="chg-row"><span class="chg-where"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M1.8 8h12.4M8 1.7c2 2 2 10.6 0 12.6M8 1.7c-2 2-2 10.6 0 12.6" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>yourbusiness.ca/rentals</span><span class="chg-what">Price updated. Trips already booked keep $55.</span></div>
+    </div>
+    <div class="a-btns"><span class="b-ghost">Undo</span><span class="b-pub">Publish</span></div></div></div></div></div>
+        </div>
+        <div class="note note-right"><svg class="note-arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M50 46 C 30 44, 14 34, 10 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 15 L10 6 L17 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>one sentence. price list and<br>website, both updated.</span></div>
+      </figure>
+    </div>
+    <div class="shot-row flip">
+      <div class="shot-copy">
+        <h3>Nothing goes live until you say yes.</h3>
+        <p>Every new page, price and post shows up as a draft first. Ask for changes in plain English, or press Publish. You're always the last click.</p>
+      </div>
+      <figure class="shot">
+        <div class="app">
+          <div class="app-bar"><span class="app-title"><img src="img/scout-head.webp" alt="">Sales Scout &middot; Pine Lake Outfitters</span><span class="app-on">Runs on Claude</span></div>
+          <div class="app-body"><aside class="app-side"><div class="app-side-h">Your business</div><ul><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>about-us.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>products-and-prices.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>voice-and-brand.md</span></li><li><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>house-rules.md</span></li><li class="on"><svg class="doc" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5h5l1.5 1.5h6.5v8.5h-13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>templates</span></li></ul></aside><div class="app-chat"><div class="a-me">Add a fall colours weekend, set up like the Sunset Paddle.</div><div class="a-sc"><img src="img/scout-head.webp" alt=""><div class="a-bub">Draft's ready. I copied the Sunset Paddle layout, used your fall photos, and took the price from your list.
+    <div class="prev">
+      <div class="prev-img"><img src="img/post-2.webp" alt=""><span class="draft">Draft &middot; not live yet</span></div>
+      <div class="prev-t"><b>Fall Colours Weekend</b><span>$240</span></div>
+      <div class="prev-s">Two nights, guided paddle, peak colour. Thanksgiving and the weekend after.</div>
+    </div>
+    <div class="a-btns"><span class="b-ghost">Ask for changes</span><span class="b-pub">Publish</span></div></div></div></div></div>
+        </div>
+        <div class="note note-left"><svg class="note-arrow" viewBox="0 0 60 50" aria-hidden="true"><path d="M50 46 C 30 44, 14 34, 10 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M3 15 L10 6 L17 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>you're always the last click.</span></div>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- A note from Matthew -->
+<div id="note" class="band-tint">
+  <div class="wrap sec">
+    <article class="letter">
+      <p class="hey">Hey there&mdash;</p>
+      <p>I'm Matthew. I run Parkbus, a bus company that takes people from Toronto and Vancouver to Canada's parks.</p>
+      <p>Two of us run it, coast to coast. Revenue has grown about 30% a year for two years.</p>
+      <p>That isn't because we work weekends. It's because I stopped doing the busywork.</p>
+      <p>Here's the thing. Every tourism operator I know has a website they're a little embarrassed by, packages that haven't changed since 2019, and a social feed that goes quiet the moment the season gets busy.</p>
+      <p>Not because they don't care. Because July is July.</p>
+      <p>The software industry's answer has been more software. Another login. Another monthly fee. Another dashboard nobody opens after March.</p>
+      <p class="big">You don't need more software. You need a <u class="ul">system</u> that does the work.</p>
+      <p>So I built one for Parkbus. A site I change by typing a sentence. Packages built to sell. A season of posts made before the season starts. <span class="hl">It saves me at least 10 hours a week.</span></p>
+      <p>That's Sales Scout. Now I'd like to set it up for you.</p>
+      <div class="sign">
+        <span class="sig-hand">Matthew</span>
+        <div class="sig-who"><img src="img/matthew.webp" alt="Matthew Thomas"><div><b>Matthew Thomas</b><span>Founder, Bookahead &amp; Parkbus</span></div></div>
+      </div>
+    </article>
   </div>
 </div>
 
@@ -401,8 +461,7 @@ nav .wordmark:hover{color:var(--sun)}
 
     <div style="display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;justify-content:space-between">
       <div style="display:flex;flex-direction:column;gap:16px;flex:1 1 480px;min-width:0">
-        <div class="eyebrow">14 days, guaranteed</div>
-        <h2 style="font-size:clamp(32px,3.8vw,50px);line-height:1.08;font-weight:800;letter-spacing:-.03em">A website that sells, packages people want, and a marketing assistant to run it all.</h2>
+        <h2 style="font-size:clamp(32px,3.8vw,50px);line-height:1.08;font-weight:800;letter-spacing:-.03em">In 14 days, guaranteed: a website that sells, packages people want, and a marketing assistant to run it all.</h2>
         <p class="lede" style="max-width:680px">A done-for-you revenue system, powered by your own AI assistant. Three upgrades, built around your business and delivered in 14 days, guaranteed, so summer 2027 is ready to sell before the snow melts.</p>
         <p class="who"><b>Who this is for:</b> independent operators selling bookable experiences, accommodation or rentals. Seasonal demand, a small team, and no marketing department.</p>
       </div>
@@ -450,12 +509,12 @@ nav .wordmark:hover{color:var(--sun)}
         </div>
         <div class="engine">
           <div class="engine-in">
-            <div class="eyebrow" style="color:var(--mute)">Your photo</div>
+            <div class="hand-label">your photo</div>
             <div class="raw"><img src="img/raw.webp" alt="A phone photo of canoes on a lake"><span>IMG_2041.jpg &middot; from your phone</span></div>
           </div>
           <div class="arrow" aria-hidden="true"><span class="ar">&rarr;</span><span class="ad">&darr;</span></div>
           <div class="engine-out">
-            <div class="eyebrow" style="color:var(--mute)">What your Scout makes, in your template</div>
+            <div class="hand-label">what your Scout makes, in your template</div>
             <div class="feed">
               <figure class="tpost"><img src="img/post-1.webp" alt=""><div class="tp-top"><span class="tp-brand">Your business</span><span class="tp-when">Sat Jul 4 &middot; 7:30 am</span></div><figcaption>The lake at 7am, before anyone else is up. Canoes go out at 9.</figcaption></figure>
               <figure class="tpost"><img src="img/post-2.webp" alt=""><div class="tp-top"><span class="tp-brand">Your business</span><span class="tp-when">Thu Jul 30 &middot; 6:00 pm</span></div><figcaption>Three cabins left for the long weekend. That's it until September.</figcaption></figure>
@@ -470,7 +529,6 @@ nav .wordmark:hover{color:var(--sun)}
     <!-- Before / after -->
     <div style="display:flex;flex-direction:column;gap:24px">
       <div style="display:flex;flex-direction:column;gap:14px;max-width:760px">
-        <div class="eyebrow">Your week, before and after</div>
         <h3 style="font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-.025em;line-height:1.1">In 14 days, AI that knows your business as well as you do.</h3>
         <p class="body">We spend two weeks teaching Sales Scout your prices, your brand and your voice. After that, the busywork stops landing on you, and your time goes back to the things only you can do.</p>
       </div>
@@ -497,7 +555,6 @@ nav .wordmark:hover{color:var(--sun)}
     <!-- Timeline -->
     <div class="tl">
       <div class="tl-head">
-        <div class="eyebrow">The process</div>
         <h3>From booking to launch in 14 days</h3>
       </div>
       <div class="rail" aria-hidden="true"><span class="tick on"><i>0</i></span><span class="tick on"><i>1</i></span><span class="tick"><i>2</i></span><span class="tick"><i>3</i></span><span class="tick"><i>4</i></span><span class="tick"><i>5</i></span><span class="tick"><i>6</i></span><span class="tick on"><i>7</i></span><span class="tick"><i>8</i></span><span class="tick"><i>9</i></span><span class="tick"><i>10</i></span><span class="tick"><i>11</i></span><span class="tick on"><i>12</i></span><span class="tick"><i>13</i></span><span class="tick on end"><i>14</i></span></div>
@@ -535,8 +592,7 @@ nav .wordmark:hover{color:var(--sun)}
   <text font-family="Figtree,Arial,sans-serif" font-size="13" font-weight="800" fill="#17133A"><textPath href="#ring" startOffset="0" textLength="384" lengthAdjust="spacing">14 DAYS &#183; GUARANTEED &#183; 14 DAYS &#183; GUARANTEED &#183;</textPath></text>
 </svg>
       <div class="g-copy">
-        <div class="eyebrow" style="color:var(--sun)">The Bookahead guarantee</div>
-        <h3>Love the draft, or get your money back.</h3>
+        <h3>Our guarantee: love the draft, or get your money back.</h3>
         <ul class="g-list">
           <li><b>See it before you commit.</b> On day 7 you see the real site and the new packages. Not for you? Say so, and you get a full refund.</li>
           <li><b>Everything is yours.</b> The site, the code and the Scout. Leave any time and take it all with you.</li>
@@ -564,8 +620,7 @@ nav .wordmark:hover{color:var(--sun)}
 <div id="destinations" style="background:var(--ink);color:#fff;overflow:hidden">
   <div class="wrap" style="display:flex;flex-wrap:wrap;gap:40px 48px;align-items:flex-end;justify-content:space-between;padding-top:96px">
     <div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:18px;padding-bottom:96px">
-      <div class="eyebrow" style="color:var(--sun)">Run a destination?</div>
-      <h2 class="h2">Sponsor a cohort to improve the whole destination.</h2>
+      <h2 class="h2">Run a destination? Sponsor a cohort to improve the whole thing.</h2>
       <p style="font-size:19px;line-height:1.55;color:var(--on-brand);max-width:620px">A DMO or RTO sponsors five to ten member businesses through the 14 days. Each operator comes out summer-ready. You get a before-and-after digital health score for every participant and a destination-level summary for your board.</p>
       <ul style="display:flex;flex-direction:column;gap:8px;font-size:17px;line-height:1.5;color:var(--on-brand)">
         <li style="padding-left:22px;position:relative"><span style="position:absolute;left:0;color:var(--sun);font-weight:800">&rarr;</span>Cohort pricing, staggered over one season</li>
@@ -583,15 +638,40 @@ nav .wordmark:hover{color:var(--sun)}
 
 <!-- About -->
 <div id="about" style="background:var(--paper)">
-  <div class="wrap sec" style="display:flex;flex-direction:column;gap:28px">
-    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-      <img src="img/matthew.webp" alt="Matthew Thomas" style="width:88px;height:88px;object-fit:cover;display:block;border-radius:50%;flex:0 0 88px">
-      <h2 class="h2">Hi, I'm Matthew Thomas.</h2>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:20px;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px">
-      <p>Fifteen years in Canadian tourism. I run Parkbus, which has carried more than 300,000 people to Canada's parks since 2010 with official partnerships with Parks Canada and VIA Rail, and Visit Canada Parks. Earlier I co-founded Whereabouts, a CRM for destination organizations.</p>
-      <p>Bookahead exists because other operators kept asking how two people run a coast-to-coast company. This is the answer: <span class="hl">practical, specific, and done in two weeks.</span></p>
-    </div>
+  <div class="wrap sec" style="display:flex;flex-direction:column;gap:32px">
+    <h2 class="h2" style="max-width:760px">Here's what it built for Parkbus.</h2>
+    <p class="lede" style="max-width:720px">Fifteen years in Canadian tourism. Parkbus has carried more than 300,000 people to Canada's parks since 2010, with official partnerships with Parks Canada and VIA Rail. Both of these sites run on the same system you'd get.</p>
+      <div class="exhibits">
+        <div class="chart" style="max-width:460px;margin-top:8px">
+        <svg viewBox="0 0 460 210" role="img" aria-label="Parkbus revenue indexed to 2024: 100, 130, 169">
+          <line x1="40" y1="170" x2="440" y2="170" stroke="#D6D1EE" stroke-width="1.5"/>
+          <rect x="70" y="106" width="90" height="64" rx="6" fill="#CFC8F5"/>
+          <rect x="185" y="87" width="90" height="83" rx="6" fill="#2A1E78"/>
+          <rect x="300" y="62" width="90" height="108" rx="6" fill="#FFD36B"/>
+          <text x="115" y="96" text-anchor="middle" font-size="18" font-weight="800" fill="#4A4570">100</text>
+          <text x="230" y="77" text-anchor="middle" font-size="18" font-weight="800" fill="#2A1E78">130</text>
+          <text x="345" y="52" text-anchor="middle" font-size="18" font-weight="800" fill="#17133A">169</text>
+          <text x="115" y="194" text-anchor="middle" font-size="15" fill="#6A6590">2024</text>
+          <text x="230" y="194" text-anchor="middle" font-size="15" fill="#6A6590">2025</text>
+          <text x="345" y="194" text-anchor="middle" font-size="15" fill="#6A6590">2026</text>
+          <path d="M115 100 Q230 40 345 56" fill="none" stroke="#17133A" stroke-width="2" stroke-dasharray="4 5" opacity=".5"/>
+        </svg>
+        <div class="cap">Parkbus revenue, indexed to 2024. About 30% growth a year, two years running, with the same two people.</div>
+      </div>
+      <a href="https://parkbus.ca" style="display:block;text-decoration:none;color:var(--ink)">
+        <div class="browser">
+          <div class="top"><span style="margin-left:8px;font-size:13px;font-weight:600;color:var(--ink-3)">parkbus.ca</span><span style="margin-left:auto;font-size:13px;color:var(--mute)">Rebuilt fall 2026</span></div>
+          <img src="img/parkbus.webp" alt="The parkbus.ca homepage">
+        </div>
+      </a>
+      <a href="https://www.visitcanadaparks.ca" style="display:block;text-decoration:none;color:var(--ink)">
+        <div class="browser">
+          <div class="top"><span style="margin-left:8px;font-size:13px;font-weight:600;color:var(--ink-3)">visitcanadaparks.ca</span><span style="margin-left:auto;font-size:13px;color:var(--mute)">Launched October 2026</span></div>
+          <img src="img/visitcanadaparks.webp" alt="The visitcanadaparks.ca homepage">
+        </div>
+      </a>
+      </div>
+    <p class="small" style="line-height:1.5">4.6 on Google. Featured in National Geographic, CBC and The Globe and Mail. Earlier I co-founded Whereabouts, a CRM for destination organizations.</p>
     <a href="mailto:matthew@bookahead.ai" class="addr">matthew@bookahead.ai</a>
   </div>
 </div>
